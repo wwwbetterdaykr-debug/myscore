@@ -227,7 +227,7 @@ section.active{display:flex;flex-direction:column}
 <section id="shared-result"><div id="sharedInner"></div></section>
 
 <script>
-// --- GA 추적용 헬퍼 함수 추가 ---
+// --- GA 추적용 헬퍼 함수 ---
 function trackStartTest() {
   if (typeof gtag !== 'undefined') {
     gtag('event', '성생활 점수_테스트 시작하기');
@@ -413,21 +413,38 @@ function calc(){
 }
 
 function buildResultHTML(sc,avg,tier,nm,pc,sorted,strongest,weakest,isShared){
-  function pickReco(exclude){
-    var best=null,bs=-1;
-    ART.forEach(function(a){if(exclude.indexOf(a)!==-1)return;var s=0;a.tag.forEach(function(t){s+=sc[t]||0;});if(a.tier==='high')s+=5;if(a.tier==='mid')s+=2;if(s>bs){bs=s;best=a;}});return best;
+  // 아티클 추천 다각화를 위한 새로운 함수 도입
+  function pickArticleFor(targetTag, exclude) {
+    var candidates = ART.filter(function(a) {
+      return exclude.indexOf(a) === -1 && a.tag.indexOf(targetTag) !== -1;
+    });
+    // 일치하는 태그가 없으면 남은 전체 중 아무거나
+    if (candidates.length === 0) {
+      candidates = ART.filter(function(a) { return exclude.indexOf(a) === -1; });
+    }
+    // 똑같은 것만 안나오게 배열 섞기
+    candidates.sort(function() { return 0.5 - Math.random(); });
+    return candidates[0];
   }
   
   var used=[];
-  var reco1=pickReco(used);if(reco1)used.push(reco1);
-  var reco2=pickReco(used);
+  // 첫 번째 추천: 가장 점수가 높은 능력치(강점) 위주
+  var reco1 = pickArticleFor(strongest, used);
+  if(reco1) used.push(reco1);
+  
+  // 두 번째 추천: 가장 점수가 낮은 능력치(약점) 위주
+  var reco2 = pickArticleFor(weakest, used);
+  
+  // 추천 아티클 순서도 섞어서 체위가 무조건 먼저 뜨지 않게
+  var recos = [reco1, reco2].filter(Boolean);
+  recos.sort(function() { return 0.5 - Math.random(); });
+
   var recoH='';
-  if(reco1||reco2){
+  if(recos.length > 0){
     recoH='<div class="reco-section"><div class="sec-tit">당신을 위한 추천</div><div class="sec-sub">결과를 바탕으로 선별된 아티클이에요</div>';
-    [reco1,reco2].forEach(function(a){
-      if(!a)return;
+    recos.forEach(function(a){
       var reason=a.tag.map(function(t){return SN[t]||'';}).join(' · ')+' 관련';
-      // GA 이벤트 전송 (onclick) 추가
+      // GA 이벤트 전송 (이벤트명 업데이트)
       recoH+='<a class="ctx-article-full" href="'+a.u+'" target="_blank" onclick="trackArticle(\''+a.u+'\')"><div class="caf-img"><img src="'+a.img+'" alt=""></div><div class="caf-body"><div class="caf-reason">'+reason+'</div><div class="caf-title">'+a.t+'</div><div class="caf-cta"><span>읽어보기 →</span></div></div></a>';
     });
     recoH+='</div>';
@@ -497,7 +514,7 @@ function lowAct(key){
 }
 
 function shareResult(){
-  if (typeof gtag !== 'undefined') gtag('event', '성생활 점수_결과 공유하기'); // GA 이벤트 추적 추가
+  if (typeof gtag !== 'undefined') gtag('event', '성생활 점수_결과 공유하기'); // GA 이벤트 추적 업데이트
   var d=window._shareData;var payload=JSON.stringify(d);
   var encoded=btoa(unescape(encodeURIComponent(payload)));
   var url=location.origin+location.pathname+'?r='+encodeURIComponent(encoded);
