@@ -4,6 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <title>나의 성생활 능력치?</title>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4BKZMPBR4X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4BKZMPBR4X');
+</script>
+
 <style>
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;900&display=swap');
@@ -15,6 +25,7 @@
 --c1:#1e5852;--c2:#5B8A72;--c3:#3D7A9E;--c4:#8B6E5A;--c5:#7A6B8A;--c6:#A68B5B;
 }
 *{margin:0;padding:0;box-sizing:border-box}
+/* body에 touch-action: manipulation 추가 (더블탭 확대 방지) */
 body{font-family:'Pretendard',sans-serif;background:var(--bg);color:var(--tx);-webkit-font-smoothing:antialiased;overflow-x:hidden;touch-action:manipulation}
 section{display:none;min-height:100dvh}
 section.active{display:flex;flex-direction:column}
@@ -172,7 +183,7 @@ section.active{display:flex;flex-direction:column}
     </div>
     <p class="provoke-note">* 기존 참여자 기준</p>
   </div>
-  <button class="btn-start" onclick="go('profile')">테스트 시작하기</button>
+  <button class="btn-start" onclick="trackStartTest(); go('profile')">테스트 시작하기</button>
 </section>
 
 <section id="profile">
@@ -216,6 +227,21 @@ section.active{display:flex;flex-direction:column}
 <section id="shared-result"><div id="sharedInner"></div></section>
 
 <script>
+// --- GA 추적용 헬퍼 함수 ---
+function trackStartTest() {
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'click_start_test');
+  }
+}
+function trackArticle(url) {
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'click_article', {
+      'article_url': url
+    });
+  }
+}
+// -----------------------
+
 // 손가락 두 개로 확대(Pinch to Zoom) 방지
 document.addEventListener('touchstart', function(event) {
   if (event.touches.length > 1) {
@@ -255,7 +281,7 @@ var COMMON=[
   {q:"지금 관계 빈도에 만족하고 있나요?",c:"comm",o:["많이 불만이에요",1,"아쉬운 편이에요",2,"그럭저럭이에요",3,"만족해요",4,"아주 만족해요",5]},
   {q:"성에 대한 고민을 편하게 나눌 사람이 있나요?",c:"know",o:["아무도 없어요",1,"거의 없어요",2,"한두 명 있어요",3,"있어요",4,"편하게 이야기할 수 있어요",5]},
   {q:"체력이 관계의 질에 영향을 준다고 느끼나요?",c:"stm",o:["전혀요",1,"조금요",2,"보통이에요",3,"꽤 그래요",4,"아주 많이요",5]},
-  {q:"요즘 운동은 얼마나 하고 있어요?",c:"stm",o:["안 하고 있어요",1,"가끔 해요",2,"주 1~2회",3,"주 3~4회",4,"거의 매일 해요",5]},
+  {q:"요즘 운동은 얼마나 하고 있어요?",c:"stm",o:["안 하고 있어요",1,"가끔 해요",2,"주 정기적으로",3,"주 3~4회",4,"거의 매일 해요",5]},
   {q:"관계 도중 체력이 딸린다고 느낀 적 있나요?",c:"stm",o:["맨날 그래요",1,"자주 그래요",2,"가끔 그래요",3,"거의 없어요",4,"한 번도 없어요",5]},
   {q:"분위기를 잘 만드는 편이라고 생각해요?",c:"sens",o:["전혀요",1,"잘 못하는 편이에요",2,"보통이에요",3,"꽤 잘하는 편이에요",4,"자신 있어요",5]},
   {q:"관계 전에 설레는 감정을 느끼나요?",c:"sens",o:["전혀요",1,"가끔요",2,"보통이에요",3,"자주 느껴요",4,"항상 설레요",5]},
@@ -293,7 +319,6 @@ var NM={
   D:{n:'슬리핑 러버',t:'잠자는 능력치를 깨울 시간',q:'"잠재력은 충분합니다. 깨워볼까요?"'}
 };
 
-/* 새로운 아티클 리스트 반영 및 능력치별 태그(tag) 재배치 */
 var ART=[
   {t:'모닝섹스가 유독 더 달콤하게 느껴지는 이유',u:'https://tryme.im/224',img:'https://score.tryme.im/1.jpeg',tag:['sens','bond'],tier:'mid'},
   {t:'귀르가즘, 사랑이 귀에 닿는 순간',u:'https://tryme.im/231',img:'https://score.tryme.im/2.jpeg',tag:['sens','comm'],tier:'mid'},
@@ -399,9 +424,13 @@ function buildResultHTML(sc,avg,tier,nm,pc,sorted,strongest,weakest,isShared){
   var recoH='';
   if(reco1||reco2){
     recoH='<div class="reco-section"><div class="sec-tit">당신을 위한 추천</div><div class="sec-sub">결과를 바탕으로 선별된 아티클이에요</div>';
-    [reco1,reco2].forEach(function(a){if(!a)return;var reason=a.tag.map(function(t){return SN[t]||'';}).join(' · ')+' 관련';
-      recoH+='<a class="ctx-article-full" href="'+a.u+'" target="_blank"><div class="caf-img"><img src="'+a.img+'" alt=""></div><div class="caf-body"><div class="caf-reason">'+reason+'</div><div class="caf-title">'+a.t+'</div><div class="caf-cta"><span>읽어보기 →</span></div></div></a>';
-    });recoH+='</div>';
+    [reco1,reco2].forEach(function(a){
+      if(!a)return;
+      var reason=a.tag.map(function(t){return SN[t]||'';}).join(' · ')+' 관련';
+      // 아티클 클릭 시 GA 이벤트 전송 (onclick 속성 추가)
+      recoH+='<a class="ctx-article-full" href="'+a.u+'" target="_blank" onclick="trackArticle(\''+a.u+'\')"><div class="caf-img"><img src="'+a.img+'" alt=""></div><div class="caf-body"><div class="caf-reason">'+reason+'</div><div class="caf-title">'+a.t+'</div><div class="caf-cta"><span>읽어보기 →</span></div></div></a>';
+    });
+    recoH+='</div>';
   }
   
   var strDesc=SN[strongest]+' 능력치가 '+sc[strongest]+'점으로 가장 높아요. 이 영역에서 당신은 이미 상위권이에요.';
@@ -457,7 +486,7 @@ function drawH(id,sc){
 
 function lowAct(key){
   var m={
-    stm:'체력은 성생활의 기초예요. 주 3회 이상 유산소 운동과 코어 운동을 시작해보세요. 수면의 질도 함께 일챙기면 자신감과 지속력 모두 올라가요.',
+    stm:'체력은 성생활의 기초예요. 주 3회 이상 유산소 운동과 코어 운동을 시작해보세요. 수면의 질도 함께 챙기면 자신감과 지속력 모두 올라가요.',
     sens:'감각은 서두르지 않을 때 깨어나요. 전희 시간을 10분 이상으로 늘려보고, 새로운 감각(온도·질감·향)을 탐색해보세요. 마인드풀 터치를 연습하면 감각이 크게 달라져요.',
     comm:'소통은 연습이에요. "나는 이럴 때 좋아"처럼 I-message로 시작해보세요. 평소에 성적 선호를 대화하는 습관을 들이면, 침대 위 소통이 자연스러워져요.',
     bond:'유대감은 비성적 스킨십에서 시작돼요. 하루 30초 포옹, 눈 맞춤, 관계 후 대화를 실천해보세요. 작은 루틴이 깊은 정서적 연결로 이어져요.',
@@ -468,6 +497,7 @@ function lowAct(key){
 }
 
 function shareResult(){
+  if (typeof gtag !== 'undefined') gtag('event', 'click_share_result'); // GA 이벤트 추적 추가
   var d=window._shareData;var payload=JSON.stringify(d);
   var encoded=btoa(unescape(encodeURIComponent(payload)));
   var url=location.origin+location.pathname+'?r='+encodeURIComponent(encoded);
