@@ -22,8 +22,8 @@
 .r-action{padding:28px 24px;border-top:1px solid var(--line)}.r-action h4{font-size:17px;margin-bottom:10px}.r-action p{font-size:14px;color:var(--tx2);line-height:1.7}
 .r-articles{padding:28px 24px;border-top:1px solid var(--line)}.r-articles .sec-sub{font-size:13px;color:var(--tx2);margin-bottom:20px;line-height:1.5}
 .art-banner{display:flex;text-decoration:none;color:var(--tx);margin-bottom:12px;overflow:hidden;background:var(--card);border:1px solid var(--line);transition:transform .15s}.art-banner:active{transform:scale(.98)}
-.art-img-wrap{width:100px;min-width:100px;height:100px;overflow:hidden;position:relative;background:var(--ac)}.art-img-wrap img{width:100%;height:100%;object-fit:cover;display:block}.art-img-wrap .art-ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:10px;background:var(--ac)}.art-img-wrap .art-ph span{font-family:'Noto Serif KR',serif;font-size:11px;font-weight:900;color:#fff;line-height:1.3;text-align:center}
-.art-banner .art-body{flex:1;padding:14px 16px;display:flex;flex-direction:column;justify-content:center}.art-banner .art-cat{font-family:'Space Grotesk',sans-serif;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--tx3);margin-bottom:4px}.art-banner .art-title{font-size:14px;font-weight:700;line-height:1.4;margin-bottom:4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.art-banner .art-from{font-size:11px;color:var(--tx3)}
+.art-img-wrap{width:100px;min-width:100px;height:100px;overflow:hidden;background:var(--bg2)}.art-img-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+.art-banner .art-body{flex:1;padding:14px 16px;display:flex;align-items:center}.art-banner .art-title{font-size:14px;font-weight:700;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .r-share{padding:28px 24px;border-top:1px solid var(--line)}.r-share .btns{display:flex;gap:8px}.r-share .btns .btn{flex:1}.disc{padding:24px;font-size:11px;color:var(--tx3);line-height:1.6;text-align:center}
 </style>
 </head>
@@ -41,48 +41,37 @@ var M_BODY=[{c:'Body',t:'흥분했을 때 몸이 잘 반응하는 편이다',s:'
 var F_BODY=[{c:'Body',t:'흥분했을 때 몸이 잘 반응하는 편이다',s:'body'},{c:'Body',t:'삽입 시 통증이 거의 없다',s:'body'},{c:'Body',t:'충분히 젖어서 불편하지 않다',s:'body'},{c:'Body',t:'오르가즘에 도달하는 게 크게 어렵지 않다',s:'body'},{c:'Body',t:'체력이 부족했다고 느낀 적 별로 없다',s:'body'}];
 var SK=['body','sense','talk','bond','mind','intel'],SN={body:'체력',sense:'감각',talk:'소통',bond:'유대',mind:'멘탈',intel:'지식'},SC={body:'#C4533A',sense:'#B8862D',talk:'#3A68A0',bond:'#7B5EA7',mind:'#4A8C6F',intel:'#B5547A'},SM={body:35,sense:21,talk:21,bond:21,mind:21,intel:21};
 var NM={M:{'20s':{m:58,s:16},'30s':{m:55,s:15},'40s':{m:50,s:17},'50s':{m:45,s:18},'60+':{m:40,s:18}},F:{'20s':{m:52,s:17},'30s':{m:54,s:16},'40s':{m:49,s:17},'50s':{m:44,s:18},'60+':{m:39,s:19}},A:{m:51,s:17}};
-</script>
-<script>
 var ART=[
-{t:'모닝섹스가 유독 더 달콤하게 느껴지는 이유',u:'https://tryme.im/224',img:'',tag:['sense','body'],tier:'high'},
-{t:'귀르가즘, 사랑이 귀에 닿는 순간',u:'https://tryme.im/231',img:'',tag:['sense'],tier:'all'},
-{t:'콘돔을 꺼내는 순간, 왜 공기가 식을까',u:'https://tryme.im/225',img:'',tag:['intel','talk'],tier:'low'},
-{t:'어른들을 위한 장난감 섹스토이',u:'https://tryme.im/226',img:'',tag:['sense','body'],tier:'mid'},
-{t:'애플 바빙 체위: 손을 멈추면, 감각은 더 또렷해져요',u:'https://tryme.im/227',img:'',tag:['sense','body'],tier:'high'},
-{t:'더 낫 체위: 다리로 그를 꽉 묶어보세요',u:'https://tryme.im/230',img:'',tag:['body','sense'],tier:'high'},
-{t:'오늘 밤, Clit-me 게임 한 판 어때?',u:'https://tryme.im/232',img:'',tag:['sense','talk'],tier:'mid'},
-{t:'미션어리 체위: 숨결까지 닿는, 기본의 미학',u:'https://tryme.im/233',img:'',tag:['bond','body'],tier:'all'},
-{t:'지스팟(G-Spot): 서로를 더 깊이 느끼기 위한 여정',u:'https://tryme.im/234',img:'',tag:['sense','body'],tier:'mid'},
-{t:'이불 속 동상이몽: 하고 싶은 날이 다른 우리',u:'https://tryme.im/236',img:'',tag:['talk','bond'],tier:'low'},
-{t:'하드프레스 체위: 빈틈없이 서로를 느끼며',u:'https://tryme.im/237',img:'',tag:['body','bond'],tier:'high'},
-{t:'늘 똑같은 밤이 지겨운 커플을 위한 안내서',u:'https://tryme.im/238',img:'',tag:['sense','talk'],tier:'mid'},
-{t:'테이스트 오브 탄트라 체위: 오직 그녀에게 푹 빠져보는 시간',u:'https://tryme.im/239',img:'',tag:['bond','sense'],tier:'high'},
-{t:'요즘따라 섹스하고 싶지 않은 이유 : 스트레스',u:'https://tryme.im/240',img:'',tag:['mind','body'],tier:'low'},
-{t:'스킨십보다 어려운 섹스 후 대화법',u:'https://tryme.im/243',img:'',tag:['talk','bond'],tier:'all'},
-{t:'스탠드 투 어텐션 체위: 천천히 녹아드는 시간',u:'https://tryme.im/244',img:'',tag:['body','bond'],tier:'high'},
-{t:'여자의 그날, 우리… 사랑해도 될까?',u:'https://tryme.im/245',img:'',tag:['intel','bond'],tier:'all'},
-{t:'크로스드 러버 체위: 궁극의 다리 꼬기',u:'https://tryme.im/246',img:'',tag:['body','sense'],tier:'high'},
-{t:'급하게 찾을수록 멀어지는 클리토리스',u:'https://tryme.im/247',img:'',tag:['sense','intel'],tier:'mid'},
-{t:'쾌락의 문턱에서 자꾸만 발목을 잡는 통증',u:'https://tryme.im/248',img:'',tag:['body','mind'],tier:'low'},
-{t:'스티미 쉬미 체위: 욕조 안, 하나의 물결이 되는 시간',u:'https://tryme.im/249',img:'',tag:['sense','bond'],tier:'high'},
-{t:'우리의 밤을 기억하게 만드는 향기',u:'https://tryme.im/250',img:'',tag:['sense'],tier:'mid'},
-{t:'내 몸이 좋아하는 압력 찾기',u:'https://tryme.im/251',img:'',tag:['sense','body'],tier:'mid'},
-{t:'센슈얼 사이드와인더 체위: 침대와 하나 되는 시간',u:'https://tryme.im/254',img:'',tag:['body','sense'],tier:'high'},
-{t:'뜨거운 밤을 만드는 전희의 재구성',u:'https://tryme.im/256',img:'',tag:['sense','talk'],tier:'all'},
-{t:'좋았던 섹스를 망치는 마지막 실수',u:'https://tryme.im/257',img:'',tag:['talk','bond'],tier:'all'},
-{t:'야한 말이 어색한 당신을 위한, 더티토크 가이드',u:'https://tryme.im/262',img:'',tag:['talk','sense'],tier:'low'},
-{t:'킁킁, 상대방이 멈칫하게 되는 진짜 이유',u:'https://tryme.im/275',img:'',tag:['intel','sense'],tier:'all'}
+{t:'모닝섹스가 유독 더 달콤하게 느껴지는 이유',u:'https://tryme.im/224',img:'https://score.tryme.im/1.jpeg',tag:['sense','body'],tier:'high'},
+{t:'귀르가즘, 사랑이 귀에 닿는 순간',u:'https://tryme.im/231',img:'https://score.tryme.im/2.jpeg',tag:['sense'],tier:'all'},
+{t:'콘돔을 꺼내는 순간, 왜 공기가 식을까',u:'https://tryme.im/225',img:'https://score.tryme.im/3.jpeg',tag:['intel','talk'],tier:'low'},
+{t:'어른들을 위한 장난감 섹스토이',u:'https://tryme.im/226',img:'https://score.tryme.im/4.jpeg',tag:['sense','body'],tier:'mid'},
+{t:'애플 바빙 체위: 손을 멈추면, 감각은 더 또렷해져요',u:'https://tryme.im/227',img:'https://score.tryme.im/5.jpeg',tag:['sense','body'],tier:'high'},
+{t:'더 낫 체위: 다리로 그를 꽉 묶어보세요',u:'https://tryme.im/230',img:'https://score.tryme.im/6.jpeg',tag:['body','sense'],tier:'high'},
+{t:'오늘 밤, Clit-me 게임 한 판 어때?',u:'https://tryme.im/232',img:'https://score.tryme.im/7.jpeg',tag:['sense','talk'],tier:'mid'},
+{t:'미션어리 체위: 숨결까지 닿는, 기본의 미학',u:'https://tryme.im/233',img:'https://score.tryme.im/8.jpeg',tag:['bond','body'],tier:'all'},
+{t:'지스팟(G-Spot): 서로를 더 깊이 느끼기 위한 여정',u:'https://tryme.im/234',img:'https://score.tryme.im/9.jpeg',tag:['sense','body'],tier:'mid'},
+{t:'이불 속 동상이몽: 하고 싶은 날이 다른 우리',u:'https://tryme.im/236',img:'https://score.tryme.im/10.jpeg',tag:['talk','bond'],tier:'low'},
+{t:'하드프레스 체위: 빈틈없이 서로를 느끼며',u:'https://tryme.im/237',img:'https://score.tryme.im/11.jpeg',tag:['body','bond'],tier:'high'},
+{t:'요즘따라 섹스하고 싶지 않은 이유 : 스트레스',u:'https://tryme.im/240',img:'https://score.tryme.im/12.jpeg',tag:['mind','body'],tier:'low'},
+{t:'테이스트 오브 탄트라 체위: 오직 그녀에게 푹 빠져보는 시간',u:'https://tryme.im/239',img:'https://score.tryme.im/13.jpeg',tag:['bond','sense'],tier:'high'},
+{t:'늘 똑같은 밤이 지겨운 커플을 위한 안내서',u:'https://tryme.im/238',img:'https://score.tryme.im/14.jpeg',tag:['sense','talk'],tier:'mid'},
+{t:'스킨십보다 어려운 섹스 후 대화법',u:'https://tryme.im/243',img:'https://score.tryme.im/15.jpeg',tag:['talk','bond'],tier:'all'},
+{t:'스탠드 투 어텐션 체위: 천천히 녹아드는 시간',u:'https://tryme.im/244',img:'https://score.tryme.im/16.jpeg',tag:['body','bond'],tier:'high'},
+{t:'여자의 그날, 우리… 사랑해도 될까?',u:'https://tryme.im/245',img:'https://score.tryme.im/17.jpeg',tag:['intel','bond'],tier:'all'},
+{t:'크로스드 러버 체위: 궁극의 다리 꼬기',u:'https://tryme.im/246',img:'https://score.tryme.im/18.jpeg',tag:['body','sense'],tier:'high'},
+{t:'급하게 찾을수록 멀어지는 클리토리스',u:'https://tryme.im/247',img:'https://score.tryme.im/19.jpeg',tag:['sense','intel'],tier:'mid'},
+{t:'쾌락의 문턱에서 자꾸만 발목을 잡는 통증',u:'https://tryme.im/248',img:'https://score.tryme.im/20.jpeg',tag:['body','mind'],tier:'low'},
+{t:'스티미 쉬미 체위: 욕조 안, 하나의 물결이 되는 시간',u:'https://tryme.im/249',img:'https://score.tryme.im/21.jpeg',tag:['sense','bond'],tier:'high'},
+{t:'우리의 밤을 기억하게 만드는 향기',u:'https://tryme.im/250',img:'https://score.tryme.im/22.jpeg',tag:['sense'],tier:'mid'},
+{t:'내 몸이 좋아하는 압력 찾기',u:'https://tryme.im/251',img:'https://score.tryme.im/23.jpeg',tag:['sense','body'],tier:'mid'},
+{t:'뜨거운 밤을 만드는 전희의 재구성',u:'https://tryme.im/256',img:'https://score.tryme.im/24.jpeg',tag:['sense','talk'],tier:'all'},
+{t:'센슈얼 사이드와인더 체위: 침대와 하나 되는 시간',u:'https://tryme.im/254',img:'https://score.tryme.im/25.jpeg',tag:['body','sense'],tier:'high'},
+{t:'좋았던 섹스를 망치는 마지막 실수',u:'https://tryme.im/257',img:'https://score.tryme.im/26.jpeg',tag:['talk','bond'],tier:'all'},
+{t:'야한 말이 어색한 당신을 위한, 더티토크 가이드',u:'https://tryme.im/262',img:'https://score.tryme.im/27.jpeg',tag:['talk','sense'],tier:'low'},
+{t:'킁킁, 상대방이 멈칫하게 되는 진짜 이유',u:'https://tryme.im/275',img:'https://score.tryme.im/28.jpeg',tag:['intel','sense'],tier:'all'}
 ];
 function pickArt(sc,total,lo){var p=[],pool=ART.slice();var a1=pool.filter(function(a){return a.tag.indexOf(lo)>-1});if(a1.length){var b1=a1.filter(function(a){return a.tier==='low'||a.tier==='all'});if(!b1.length)b1=a1;p.push(b1[Math.floor(Math.random()*b1.length)]);}var r2=pool.filter(function(a){return!p.some(function(x){return x.u===a.u})});if(total>=70){var h=r2.filter(function(a){return a.tier==='high'});if(h.length)p.push(h[Math.floor(Math.random()*h.length)]);}else if(total>=45){var m=r2.filter(function(a){return a.tier==='mid'||a.tier==='all'});if(m.length)p.push(m[Math.floor(Math.random()*m.length)]);}else{var l=r2.filter(function(a){return a.tier==='low'||a.tier==='all'});if(l.length)p.push(l[Math.floor(Math.random()*l.length)]);}var r3=pool.filter(function(a){return!p.some(function(x){return x.u===a.u})});if(r3.length)p.push(r3[Math.floor(Math.random()*r3.length)]);return p.slice(0,3);}
-/* OG image auto-fetch via proxy */
-function fetchOG(url,imgEl,phEl){
-fetch('https://opengraph.io/api/1.1/site/'+encodeURIComponent(url)+'?app_id=default')
-.then(function(r){return r.json()})
-.then(function(d){
-var img=d&&d.hybridGraph&&d.hybridGraph.image;
-if(img){imgEl.src=img;imgEl.style.display='block';if(phEl)phEl.style.display='none';}
-}).catch(function(){});
-}
 var MT={},FT={};
 MT['body_sense']={n:'본능의 지배자',tg:'몸과 감각이 이끄는 타입',d:'머리보다 몸이 먼저 반응합니다. 본능에 충실하고 감각적 쾌락을 자연스럽게 즐깁니다.',quote:'생각은 끝나고 해도 되지 않나요?',str:'높은 신체 반응력과 감각 몰입이 강점.',wk:'소통과 유대가 낮으면 상대는 허전함을 느낍니다.',tip:'이번 주는 끝나고 5분만 안고 대화해 보세요.'};
 MT['body_talk']={n:'솔직한 체력파',tg:'말도 잘하고 몸도 따라주는',d:'체력도 되고 하고 싶은 말도 합니다.',quote:'좋으면 좋다, 싫으면 싫다.',str:'신체 능력과 커뮤니케이션의 균형.',wk:'감각이 낮으면 성실하지만 지루할 수 있습니다.',tip:'평소 안 하던 부위를 천천히 만져보세요.'};
@@ -139,13 +128,10 @@ var tk=isAll?'allrounder':[top1,top2].sort().join('_');
 var types=G==='M'?MT:FT,ch=types[tk]||types['allrounder'],gl=G==='M'?'남성':'여성';
 var punch='';if(total>=75)punch=ch.quote;else if(total>=50)punch='나쁘지 않습니다. 하지만 파트너도 같은 생각일까요?';else punch='점수가 낮다고 끝이 아닙니다. 하지만 현실은 직시해야 합니다.';
 var arts=pickArt(sc,total,lo);
-var artH='';arts.forEach(function(a,idx){
+var artH='';arts.forEach(function(a){
 artH+='<a class="art-banner" href="'+a.u+'" target="_blank">'
-+'<div class="art-img-wrap">'
-+'<img id="aimg'+idx+'" src="" alt="" style="display:none" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'">'
-+'<div class="art-ph" id="aph'+idx+'"><span>'+a.t+'</span></div>'
-+'</div>'
-+'<div class="art-body"><div class="art-cat">tryme</div><div class="art-title">'+a.t+'</div><div class="art-from">tryme.im</div></div></a>';
++'<div class="art-img-wrap"><img src="'+a.img+'" alt=""></div>'
++'<div class="art-body"><div class="art-title">'+a.t+'</div></div></a>';
 });
 var R=document.getElementById('result');
 R.innerHTML='<div class="r-hero"><div class="kicker">Your Score</div><div class="score">'+total+'<sub>/100</sub></div><div class="tier" style="background:'+tierBg+'">'+tier+' Class</div><div class="pct">전체 성인 상위 '+topPct+'% · '+gl+' '+AG+' 상위 '+(100-pGrp)+'%</div><div class="punch">'+punch+'</div></div>'
@@ -162,11 +148,6 @@ R.innerHTML='<div class="r-hero"><div class="kicker">Your Score</div><div class=
 window._rName=ch.n;window._rScore=total;window._rTag=ch.tg;go('result');
 setTimeout(function(){document.querySelectorAll('[data-w]').forEach(function(el){el.style.width=el.dataset.w+'%';});},300);
 setTimeout(function(){drawH(sc);},400);
-/* Auto-fetch OG images for article banners */
-arts.forEach(function(a,idx){
-if(a.img){document.getElementById('aimg'+idx).src=a.img;document.getElementById('aimg'+idx).style.display='block';document.getElementById('aph'+idx).style.display='none';}
-else{fetchOG(a.u,document.getElementById('aimg'+idx),document.getElementById('aph'+idx));}
-});
 }
 function drawH(sc){var cv=document.getElementById('hx');if(!cv)return;var ctx=cv.getContext('2d'),cx=130,cy=130,R=90,n=6;function ag(i){return-Math.PI/2+(2*Math.PI/n)*i;}[.25,.5,.75,1].forEach(function(f){ctx.beginPath();for(var i=0;i<=n;i++){var a=ag(i%n);i?ctx.lineTo(cx+R*f*Math.cos(a),cy+R*f*Math.sin(a)):ctx.moveTo(cx+R*f*Math.cos(a),cy+R*f*Math.sin(a));}ctx.strokeStyle='#D6D1C9';ctx.lineWidth=.5;ctx.stroke();});for(var i=0;i<n;i++){ctx.beginPath();ctx.moveTo(cx,cy);var a=ag(i);ctx.lineTo(cx+R*Math.cos(a),cy+R*Math.sin(a));ctx.strokeStyle='#D6D1C9';ctx.lineWidth=.5;ctx.stroke();}ctx.beginPath();SK.forEach(function(k,i){var v=sc[k]/100,a=ag(i);i?ctx.lineTo(cx+R*v*Math.cos(a),cy+R*v*Math.sin(a)):ctx.moveTo(cx+R*v*Math.cos(a),cy+R*v*Math.sin(a));});ctx.closePath();ctx.fillStyle='rgba(26,23,21,.07)';ctx.fill();ctx.strokeStyle='#1A1715';ctx.lineWidth=1.5;ctx.stroke();SK.forEach(function(k,i){var v=sc[k]/100,a=ag(i),x=cx+R*v*Math.cos(a),y=cy+R*v*Math.sin(a);ctx.beginPath();ctx.arc(x,y,3,0,Math.PI*2);ctx.fillStyle='#1A1715';ctx.fill();});SK.forEach(function(k,i){var a=ag(i),lx=cx+(R+22)*Math.cos(a),ly=cy+(R+22)*Math.sin(a);ctx.font='600 11px Pretendard';ctx.fillStyle='#8A847A';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(SN[k],lx,ly);});}
 function copyR(){var t='나의 성생활 능력치: '+window._rName+'\n'+window._rTag+'\n점수: '+window._rScore+'/100\n\n테스트 해보기 →';navigator.clipboard.writeText(t).then(function(){alert('복사되었어요!');});}
