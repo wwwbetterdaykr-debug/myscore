@@ -11,8 +11,8 @@
 
 :root{
 --bg:#F5F1EB;--card:#FFFDF9;--tx:#2C2925;--tx2:#6B6560;--tx3:#8A847A;
---accent:#C8102E;--line:#E8E2D8;
---red:#C8102E;--blue:#2563EB;--green:#16A34A;--purple:#9333EA;--amber:#D97706;--pink:#EC4899;
+--accent:#1e5852;--accent-light:#e8f0ef;--line:#E8E2D8;
+--c1:#1e5852;--c2:#5B8A72;--c3:#3D7A9E;--c4:#8B6E5A;--c5:#7A6B8A;--c6:#A68B5B;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Pretendard',sans-serif;background:var(--bg);color:var(--tx);-webkit-font-smoothing:antialiased;overflow-x:hidden}
@@ -24,54 +24,54 @@ section.active{display:flex;flex-direction:column}
 .intro-title{font-family:'Noto Serif KR',serif;font-weight:900;font-size:32px;line-height:1.3;letter-spacing:-.04em;margin-bottom:12px}
 .intro-sub{font-size:15px;color:var(--tx2);line-height:1.6;margin-bottom:28px}
 .trust-bar{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-bottom:18px}
-.trust-dot{font-size:11px;font-weight:600;color:var(--tx3);background:var(--card);border:1px solid var(--line);border-radius:20px;padding:4px 10px}
+.trust-dot{font-size:11px;font-weight:600;color:var(--tx3);background:var(--card);border:1px solid var(--line);border-radius:0;padding:4px 10px}
 .social-proof{display:flex;justify-content:center;gap:18px;margin-bottom:18px}
 .sp-item{text-align:center}
 .sp-num{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;color:var(--tx)}
 .sp-label{font-size:11px;color:var(--tx3);margin-top:2px}
 .intro-ref{font-size:11px;color:var(--tx3);line-height:1.5;margin-bottom:24px;padding:0 12px}
-.provoke-box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin-bottom:32px;max-width:320px;width:100%}
+.provoke-box{background:var(--card);border:1px solid var(--line);border-radius:0;padding:20px;margin-bottom:32px;max-width:320px;width:100%}
 .provoke-q{font-weight:800;font-size:15px;margin-bottom:12px}
 .provoke-row{display:flex;justify-content:center;gap:24px;margin-bottom:6px}
 .provoke-pct{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:28px}
-.provoke-pct.red{color:var(--red)}
-.provoke-pct.blue{color:var(--blue)}
+.provoke-pct.m{color:var(--c1)}
+.provoke-pct.f{color:var(--c3)}
 .provoke-label{font-size:12px;color:var(--tx3)}
 .provoke-note{font-size:11px;color:var(--tx3)}
-.btn-start{width:100%;max-width:320px;padding:18px;border:none;border-radius:16px;background:var(--accent);color:#fff;font-size:17px;font-weight:800;cursor:pointer;letter-spacing:-.03em;transition:transform .15s}
-.btn-start:active{transform:scale(.96)}
+.btn-start{width:100%;max-width:320px;padding:18px;border:none;border-radius:0;background:var(--accent);color:#fff;font-size:17px;font-weight:800;cursor:pointer;letter-spacing:-.03em;transition:transform .15s}
+.btn-start:active{transform:scale(.97)}
 
 #profile{justify-content:center;align-items:center;padding:24px}
 .profile-wrap{width:100%;max-width:360px}
 .profile-wrap h2{font-family:'Noto Serif KR',serif;font-weight:900;font-size:24px;text-align:center;margin-bottom:32px;letter-spacing:-.04em}
 .gender-row{display:flex;gap:12px;margin-bottom:24px}
-.g-btn{flex:1;padding:18px;border:2px solid var(--line);border-radius:16px;background:var(--card);font-size:16px;font-weight:700;cursor:pointer;transition:border-color .2s,background .2s;text-align:center}
-.g-btn.sel{border-color:var(--accent);background:#FFF5F5}
+.g-btn{flex:1;padding:18px;border:2px solid var(--line);border-radius:0;background:var(--card);font-size:16px;font-weight:700;cursor:pointer;transition:border-color .2s,background .2s;text-align:center}
+.g-btn.sel{border-color:var(--accent);background:var(--accent-light)}
 .age-group label{display:block;font-size:14px;font-weight:700;margin-bottom:8px}
-.age-group select{width:100%;padding:16px;border:2px solid var(--line);border-radius:14px;background:var(--card);font-size:15px;font-family:inherit;appearance:none;-webkit-appearance:none}
-.btn-next{width:100%;padding:18px;border:none;border-radius:16px;background:var(--accent);color:#fff;font-size:17px;font-weight:800;margin-top:32px;cursor:pointer;letter-spacing:-.03em;transition:transform .15s}
-.btn-next:active{transform:scale(.96)}
+.age-group select{width:100%;padding:16px;border:2px solid var(--line);border-radius:0;background:var(--card);font-size:15px;font-family:inherit;appearance:none;-webkit-appearance:none}
+.btn-next{width:100%;padding:18px;border:none;border-radius:0;background:var(--accent);color:#fff;font-size:17px;font-weight:800;margin-top:32px;cursor:pointer;letter-spacing:-.03em;transition:transform .15s}
+.btn-next:active{transform:scale(.97)}
 
 #quiz{padding:24px;align-items:center}
 .quiz-wrap{width:100%;max-width:400px;flex:1;display:flex;flex-direction:column}
 .q-progress{display:flex;align-items:center;gap:10px;margin-bottom:24px}
-.q-bar-bg{flex:1;height:6px;background:var(--line);border-radius:3px}
-.q-bar{height:100%;background:var(--accent);border-radius:3px;transition:width .3s}
+.q-bar-bg{flex:1;height:4px;background:var(--line);border-radius:0}
+.q-bar{height:100%;background:var(--accent);border-radius:0;transition:width .3s}
 .q-num{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;color:var(--tx3);min-width:42px;text-align:right}
 .q-body{flex:1;display:flex;justify-content:center;align-items:center;text-align:center;padding:20px 0}
 .q-body p{font-weight:800;font-size:26px;line-height:1.45;letter-spacing:-.04em}
 .opts{display:flex;flex-direction:column;gap:10px;margin-bottom:16px}
-.opt-btn{padding:16px;border:2px solid var(--line);border-radius:14px;background:var(--card);font-size:15px;font-weight:600;cursor:pointer;text-align:center;transition:border-color .2s,background .2s}
-.opt-btn.sel{border-color:var(--accent);background:#FFF5F5;color:var(--accent)}
+.opt-btn{padding:16px;border:2px solid var(--line);border-radius:0;background:var(--card);font-size:15px;font-weight:600;cursor:pointer;text-align:center;transition:border-color .2s,background .2s}
+.opt-btn.sel{border-color:var(--accent);background:var(--accent-light);color:var(--accent)}
 .nav-row{display:flex;gap:10px;margin-top:auto;padding-bottom:12px}
-.nav-btn{flex:1;padding:14px;border:2px solid var(--line);border-radius:14px;background:var(--card);font-size:15px;font-weight:700;cursor:pointer;text-align:center;transition:border-color .2s,background .2s,opacity .2s}
+.nav-btn{flex:1;padding:14px;border:2px solid var(--line);border-radius:0;background:var(--card);font-size:15px;font-weight:700;cursor:pointer;text-align:center;transition:border-color .2s,background .2s,opacity .2s}
 .nav-btn:disabled{opacity:.35;cursor:default}
 .nav-btn.primary{border-color:var(--accent);background:var(--accent);color:#fff}
 
 #loading{justify-content:center;align-items:center;text-align:center;padding:24px}
 .ld-title{font-family:'Noto Serif KR',serif;font-weight:900;font-size:22px;margin-bottom:16px}
-.ld-bar-bg{width:200px;height:6px;background:var(--line);border-radius:3px;overflow:hidden}
-.ld-bar{height:100%;width:0;background:var(--accent);border-radius:3px;transition:width .3s}
+.ld-bar-bg{width:200px;height:4px;background:var(--line);border-radius:0;overflow:hidden}
+.ld-bar{height:100%;width:0;background:var(--accent);border-radius:0;transition:width .3s}
 .ld-pct{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;color:var(--tx3);margin-top:8px}
 
 #result{padding:0 0 60px}
@@ -96,21 +96,21 @@ section.active{display:flex;flex-direction:column}
 .stat-hd{display:flex;justify-content:space-between;margin-bottom:4px}
 .stat-name{font-size:14px;font-weight:700}
 .stat-val{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px}
-.stat-bar-bg{height:8px;background:var(--line);border-radius:4px}
-.stat-bar{height:100%;border-radius:4px;transition:width .6s}
+.stat-bar-bg{height:6px;background:var(--line);border-radius:0}
+.stat-bar{height:100%;border-radius:0;transition:width .6s}
 
 .r-sw{padding:28px 24px;border-top:1px solid var(--line)}
-.sw-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin-bottom:12px}
+.sw-card{background:var(--card);border:1px solid var(--line);border-radius:0;padding:20px;margin-bottom:12px}
 .sw-card:last-child{margin-bottom:0}
 .sw-label{font-size:12px;font-weight:700;color:var(--accent);margin-bottom:6px;letter-spacing:.02em}
-.sw-label.weak{color:var(--blue)}
+.sw-label.weak{color:var(--c3)}
 .sw-name{font-weight:800;font-size:16px;margin-bottom:4px}
 .sw-desc{font-size:13px;color:var(--tx2);line-height:1.55}
 
 .ctx-article-wrap{padding:0 24px;margin-top:20px}
 .ctx-article-label{font-size:13px;font-weight:700;color:var(--accent);margin-bottom:12px;letter-spacing:-.02em}
-.ctx-article{display:flex;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s}
-.ctx-article:active{transform:scale(.97)}
+.ctx-article{display:flex;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:0;overflow:hidden;text-decoration:none;color:inherit;transition:transform .2s}
+.ctx-article:active{transform:scale(.98)}
 .ctx-article .ca-img{width:110px;min-height:110px;flex-shrink:0;overflow:hidden}
 .ctx-article .ca-img img{width:100%;height:100%;object-fit:cover}
 .ctx-article .ca-body{flex:1;padding:14px 14px 14px 0;display:flex;flex-direction:column;justify-content:center}
@@ -122,8 +122,8 @@ section.active{display:flex;flex-direction:column}
 .reco-section{padding:28px 24px;border-top:1px solid var(--line)}
 .reco-section .sec-tit{font-size:18px;font-weight:800;margin-bottom:6px;letter-spacing:-.04em}
 .reco-section .sec-sub{font-size:13px;color:var(--tx3);margin-bottom:20px;line-height:1.5}
-.ctx-article-full{display:block;border-radius:16px;overflow:hidden;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);transition:transform .2s;margin-bottom:12px}
-.ctx-article-full:active{transform:scale(.97)}
+.ctx-article-full{display:block;border-radius:0;overflow:hidden;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);transition:transform .2s;margin-bottom:12px}
+.ctx-article-full:active{transform:scale(.98)}
 .ctx-article-full .caf-img{width:100%;aspect-ratio:16/9;overflow:hidden}
 .ctx-article-full .caf-img img{width:100%;height:100%;object-fit:cover}
 .ctx-article-full .caf-body{padding:16px}
@@ -133,11 +133,11 @@ section.active{display:flex;flex-direction:column}
 .ctx-article-full .caf-cta span{color:var(--accent);font-weight:700}
 
 .r-advice{padding:28px 24px;border-top:1px solid var(--line)}
-.adv-box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+.adv-box{background:var(--card);border:1px solid var(--line);border-radius:0;padding:20px}
 .adv-box p{font-size:14px;line-height:1.7;color:var(--tx2)}
 
 .r-tip{padding:28px 24px;border-top:1px solid var(--line)}
-.tip-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+.tip-card{background:var(--card);border:1px solid var(--line);border-radius:0;padding:20px}
 .tip-week{font-size:12px;font-weight:700;color:var(--accent);margin-bottom:6px}
 .tip-title{font-weight:800;font-size:16px;margin-bottom:8px;letter-spacing:-.02em}
 .tip-body{font-size:14px;color:var(--tx2);line-height:1.65}
@@ -146,16 +146,16 @@ section.active{display:flex;flex-direction:column}
 .r-hex canvas{max-width:300px;width:100%;aspect-ratio:1/1}
 
 .r-actions{padding:20px 24px 0;display:flex;gap:10px}
-.btn-share{flex:1;padding:16px;border:none;border-radius:14px;background:var(--accent);color:#fff;font-size:15px;font-weight:700;cursor:pointer;transition:transform .15s}
-.btn-share:active{transform:scale(.96)}
-.btn-retry{flex:1;padding:16px;border:2px solid var(--line);border-radius:14px;background:var(--card);font-size:15px;font-weight:700;cursor:pointer;transition:border-color .2s}
+.btn-share{flex:1;padding:16px;border:none;border-radius:0;background:var(--accent);color:#fff;font-size:15px;font-weight:700;cursor:pointer;transition:transform .15s}
+.btn-share:active{transform:scale(.97)}
+.btn-retry{flex:1;padding:16px;border:2px solid var(--line);border-radius:0;background:var(--card);font-size:15px;font-weight:700;cursor:pointer;transition:border-color .2s}
 .btn-retry:active{border-color:var(--accent)}
 
 #shared-result{display:none;min-height:100dvh;flex-direction:column}
 #shared-result.active{display:flex}
 .shared-cta{text-align:center;padding:24px}
-.btn-try{display:inline-block;padding:16px 40px;border:none;border-radius:16px;background:var(--accent);color:#fff;font-size:17px;font-weight:800;cursor:pointer;text-decoration:none;transition:transform .15s}
-.btn-try:active{transform:scale(.96)}
+.btn-try{display:inline-block;padding:16px 40px;border:none;border-radius:0;background:var(--accent);color:#fff;font-size:17px;font-weight:800;cursor:pointer;text-decoration:none;transition:transform .15s}
+.btn-try:active{transform:scale(.97)}
 </style>
 </head>
 <body>
@@ -179,8 +179,8 @@ section.active{display:flex;flex-direction:column}
   <div class="provoke-box">
     <p class="provoke-q">당신은 평균 이상일까요?</p>
     <div class="provoke-row">
-      <div><div class="provoke-pct red">62%</div><div class="provoke-label">남성 평균 이하</div></div>
-      <div><div class="provoke-pct blue">58%</div><div class="provoke-label">여성 평균 이하</div></div>
+      <div><div class="provoke-pct m">62%</div><div class="provoke-label">남성 평균 이하</div></div>
+      <div><div class="provoke-pct f">58%</div><div class="provoke-label">여성 평균 이하</div></div>
     </div>
     <p class="provoke-note">* 기존 참여자 기준</p>
   </div>
@@ -228,73 +228,57 @@ section.active{display:flex;flex-direction:column}
 <section id="shared-result"><div id="sharedInner"></div></section>
 
 <script>
-/* =============================================================
-   ★ 카운터 API — 서버/가입 필요 없음
-   키를 고유하게 유지하세요. 아래 키를 원하는 이름으로 바꿔도 됩니다.
-   ============================================================= */
 var COUNTER_KEY='tryme-sex-score-test-20260426';
 var COUNTER_API='https://countapi.mileshilliard.com/api/v1';
-
 function loadCounter(){
-  fetch(COUNTER_API+'/get/'+COUNTER_KEY)
-    .then(function(r){return r.json();})
-    .then(function(d){
-      if(d.value){
-        document.getElementById('counterDisplay').textContent=Number(d.value).toLocaleString();
-      }else{
-        /* 키가 아직 없으면 초기값 세팅 */
-        fetch(COUNTER_API+'/set/'+COUNTER_KEY+'?value=24817')
-          .then(function(){document.getElementById('counterDisplay').textContent='24,817';});
-      }
-    })
-    .catch(function(){document.getElementById('counterDisplay').textContent='24,817';});
+  fetch(COUNTER_API+'/get/'+COUNTER_KEY).then(function(r){return r.json();}).then(function(d){
+    if(d.value){document.getElementById('counterDisplay').textContent=Number(d.value).toLocaleString();}
+    else{fetch(COUNTER_API+'/set/'+COUNTER_KEY+'?value=24817').then(function(){document.getElementById('counterDisplay').textContent='24,817';});}
+  }).catch(function(){document.getElementById('counterDisplay').textContent='24,817';});
 }
+function incrementCounter(){fetch(COUNTER_API+'/hit/'+COUNTER_KEY).catch(function(){});}
 
-function incrementCounter(){
-  fetch(COUNTER_API+'/hit/'+COUNTER_KEY).catch(function(){});
-}
-
-/* ======== DATA ======== */
+/* ======== 질문 데이터 — 토스 UX 라이팅 스타일 ======== */
 var COMMON=[
-  {q:"파트너와 함께한 밤, 다음 날 컨디션은?",c:"stm",o:["완전 지침",1,"좀 피곤",2,"보통",3,"괜찮음",4,"오히려 활력",5]},
-  {q:"새로운 시도를 제안받으면?",c:"opn",o:["절대 싫어",1,"좀 불편",2,"일단 들어봄",3,"관심 생김",4,"바로 해보자!",5]},
-  {q:"관계 중 원하는 걸 말로 표현하는 편?",c:"comm",o:["거의 못함",1,"어려움",2,"가끔",3,"자주",4,"자연스럽게",5]},
-  {q:"성관계 후 느끼는 감정은?",c:"bond",o:["공허함",1,"그냥 그럼",2,"편안함",3,"행복함",4,"깊은 유대감",5]},
-  {q:"성적 자신감 정도는?",c:"conf",o:["매우 낮음",1,"낮은 편",2,"보통",3,"높은 편",4,"매우 높음",5]},
-  {q:"피임·성건강 지식 수준은?",c:"know",o:["거의 모름",1,"조금 앎",2,"보통",3,"잘 아는 편",4,"전문 수준",5]},
-  {q:"관계 중 상대 반응을 얼마나 살피나요?",c:"sens",o:["거의 안 봄",1,"가끔",2,"보통",3,"자주",4,"항상 민감하게",5]},
-  {q:"스킨십(비성적 포함)을 자주 하나요?",c:"bond",o:["거의 없음",1,"가끔",2,"보통",3,"자주",4,"매일",5]},
-  {q:"성관계 빈도에 만족하나요?",c:"comm",o:["매우 불만",1,"불만",2,"보통",3,"만족",4,"매우 만족",5]},
-  {q:"성 관련 고민을 터놓을 사람이 있나요?",c:"know",o:["전혀 없음",1,"거의 없음",2,"한두 명",3,"있음",4,"편하게 여러 명",5]},
-  {q:"체력이 관계 퀄리티에 영향을 준다고 느끼나요?",c:"stm",o:["전혀",1,"조금",2,"보통",3,"꽤",4,"매우 많이",5]},
-  {q:"평소 운동을 얼마나 하나요?",c:"stm",o:["전혀 안 함",1,"가끔",2,"주 1~2회",3,"주 3~4회",4,"거의 매일",5]},
-  {q:"관계 중 체력이 부족하다고 느낀 적?",c:"stm",o:["항상",1,"자주",2,"가끔",3,"거의 없음",4,"전혀 없음",5]},
-  {q:"분위기를 만드는 능력이 있다고 생각?",c:"sens",o:["전혀",1,"약간",2,"보통",3,"잘하는 편",4,"자신 있음",5]},
-  {q:"관계 전 설레는 감정을 자주 느끼나요?",c:"sens",o:["전혀",1,"가끔",2,"보통",3,"자주",4,"항상",5]},
-  {q:"상대방의 성적 취향을 얼마나 알고 있나요?",c:"comm",o:["전혀 모름",1,"조금",2,"보통",3,"잘 앎",4,"완벽히",5]},
-  {q:"관계 후 대화(필로우토크)를 하나요?",c:"bond",o:["전혀",1,"거의 없음",2,"가끔",3,"자주",4,"항상",5]},
-  {q:"성적 판타지를 파트너와 공유한 적?",c:"opn",o:["전혀",1,"거의 없음",2,"가끔",3,"종종",4,"자주",5]},
-  {q:"스트레스가 성생활에 미치는 영향은?",c:"conf",o:["매우 큼",1,"큰 편",2,"보통",3,"적은 편",4,"거의 없음",5]},
-  {q:"성관계를 통해 정서적 안정을 얻나요?",c:"bond",o:["전혀",1,"조금",2,"보통",3,"꽤",4,"매우 많이",5]}
+  {q:"밤을 보낸 다음 날, 몸 상태는 어때요?",c:"stm",o:["완전 녹초",1,"좀 피곤한 편",2,"딱 보통",3,"멀쩡한 편",4,"오히려 개운해요",5]},
+  {q:"파트너가 새로운 걸 해보자고 하면?",c:"opn",o:["솔직히 싫어요",1,"좀 부담돼요",2,"일단 들어는 봐요",3,"궁금해져요",4,"당장 해보고 싶어요",5]},
+  {q:"관계 중에 원하는 걸 말로 전하는 편인가요?",c:"comm",o:["거의 못 해요",1,"꽤 어려워요",2,"가끔은 해요",3,"자주 하는 편이에요",4,"자연스럽게 말해요",5]},
+  {q:"관계가 끝난 후, 어떤 기분이 들어요?",c:"bond",o:["공허해요",1,"별 느낌 없어요",2,"편안해요",3,"행복해요",4,"깊이 연결된 느낌이에요",5]},
+  {q:"침대 위에서 나 자신에 대한 자신감은?",c:"conf",o:["많이 부족해요",1,"좀 낮은 편이에요",2,"보통이에요",3,"꽤 있는 편이에요",4,"아주 자신 있어요",5]},
+  {q:"피임이나 성건강, 얼마나 알고 있어요?",c:"know",o:["잘 몰라요",1,"조금 알아요",2,"보통이에요",3,"꽤 잘 아는 편이에요",4,"전문가 수준이에요",5]},
+  {q:"관계 중 상대의 표정이나 반응을 살피나요?",c:"sens",o:["거의 안 봐요",1,"가끔 봐요",2,"보통이에요",3,"자주 살펴요",4,"항상 세심하게 봐요",5]},
+  {q:"일상에서 스킨십을 자주 하는 편인가요?",c:"bond",o:["거의 안 해요",1,"가끔 해요",2,"보통이에요",3,"자주 하는 편이에요",4,"매일 해요",5]},
+  {q:"지금 관계 빈도에 만족하고 있나요?",c:"comm",o:["많이 불만이에요",1,"아쉬운 편이에요",2,"그럭저럭이에요",3,"만족해요",4,"아주 만족해요",5]},
+  {q:"성에 대한 고민을 편하게 나눌 사람이 있나요?",c:"know",o:["아무도 없어요",1,"거의 없어요",2,"한두 명 있어요",3,"있어요",4,"편하게 이야기할 수 있어요",5]},
+  {q:"체력이 관계의 질에 영향을 준다고 느끼나요?",c:"stm",o:["전혀요",1,"조금요",2,"보통이에요",3,"꽤 그래요",4,"아주 많이요",5]},
+  {q:"요즘 운동은 얼마나 하고 있어요?",c:"stm",o:["안 하고 있어요",1,"가끔 해요",2,"주 1~2회",3,"주 3~4회",4,"거의 매일 해요",5]},
+  {q:"관계 도중 체력이 딸린다고 느낀 적 있나요?",c:"stm",o:["맨날 그래요",1,"자주 그래요",2,"가끔 그래요",3,"거의 없어요",4,"한 번도 없어요",5]},
+  {q:"분위기를 잘 만드는 편이라고 생각해요?",c:"sens",o:["전혀요",1,"잘 못하는 편이에요",2,"보통이에요",3,"꽤 잘하는 편이에요",4,"자신 있어요",5]},
+  {q:"관계 전에 설레는 감정을 느끼나요?",c:"sens",o:["전혀요",1,"가끔요",2,"보통이에요",3,"자주 느껴요",4,"항상 설레요",5]},
+  {q:"파트너가 좋아하는 걸 얼마나 알고 있어요?",c:"comm",o:["잘 몰라요",1,"조금 알아요",2,"보통이에요",3,"꽤 잘 알아요",4,"완벽하게 알아요",5]},
+  {q:"관계 후에 이런저런 이야기를 나누나요?",c:"bond",o:["전혀 안 해요",1,"거의 안 해요",2,"가끔 해요",3,"자주 해요",4,"항상 해요",5]},
+  {q:"판타지를 파트너와 공유해 본 적 있나요?",c:"opn",o:["전혀 없어요",1,"거의 없어요",2,"가끔 있어요",3,"종종 있어요",4,"자주 해요",5]},
+  {q:"스트레스가 성생활에 얼마나 영향을 주나요?",c:"conf",o:["아주 많이요",1,"꽤 많이요",2,"보통이에요",3,"별로 안 줘요",4,"거의 안 줘요",5]},
+  {q:"관계를 통해 마음이 안정되는 느낌을 받나요?",c:"bond",o:["전혀요",1,"조금요",2,"보통이에요",3,"꽤 그래요",4,"아주 많이요",5]}
 ];
 var M_BODY=[
-  {q:"발기 유지에 자신 있나요?",c:"stm",o:["매우 불안",1,"불안한 편",2,"보통",3,"자신 있음",4,"매우 자신",5]},
-  {q:"사정 타이밍 조절 능력은?",c:"sens",o:["전혀 못함",1,"어려움",2,"보통",3,"잘하는 편",4,"자유자재",5]},
-  {q:"전희에 충분한 시간을 쓰나요?",c:"sens",o:["거의 안 함",1,"짧게",2,"보통",3,"충분히",4,"매우 충분",5]},
-  {q:"상대의 오르가슴을 중요시하나요?",c:"comm",o:["생각 안 함",1,"가끔",2,"보통",3,"중요하게",4,"최우선",5]},
-  {q:"본인의 신체 이미지에 만족?",c:"conf",o:["매우 불만",1,"불만",2,"보통",3,"만족",4,"매우 만족",5]}
+  {q:"발기 상태를 유지하는 데 자신 있나요?",c:"stm",o:["많이 불안해요",1,"좀 불안해요",2,"보통이에요",3,"자신 있어요",4,"아주 자신 있어요",5]},
+  {q:"타이밍을 조절하는 건 어떤 편이에요?",c:"sens",o:["거의 못 해요",1,"어려워요",2,"보통이에요",3,"잘하는 편이에요",4,"자유롭게 해요",5]},
+  {q:"전희에 시간을 충분히 쓰고 있나요?",c:"sens",o:["거의 안 해요",1,"짧은 편이에요",2,"보통이에요",3,"충분히 해요",4,"아주 충분히 해요",5]},
+  {q:"상대의 만족을 얼마나 중요하게 생각해요?",c:"comm",o:["별로 생각 안 해요",1,"가끔 생각해요",2,"보통이에요",3,"중요하게 생각해요",4,"가장 중요해요",5]},
+  {q:"내 몸에 대해 어떻게 느끼고 있나요?",c:"conf",o:["많이 불만이에요",1,"아쉬운 편이에요",2,"보통이에요",3,"만족해요",4,"아주 만족해요",5]}
 ];
 var F_BODY=[
-  {q:"관계 중 통증을 느끼나요?",c:"stm",o:["항상",1,"자주",2,"가끔",3,"거의 없음",4,"전혀 없음",5]},
-  {q:"충분히 흥분된 상태에서 시작하나요?",c:"sens",o:["거의 아님",1,"가끔",2,"보통",3,"대체로",4,"항상",5]},
-  {q:"오르가슴을 경험하는 빈도는?",c:"sens",o:["전혀",1,"드물게",2,"가끔",3,"자주",4,"거의 항상",5]},
-  {q:"관계 중 원하지 않는 걸 거절할 수 있나요?",c:"conf",o:["전혀 못함",1,"어려움",2,"보통",3,"잘하는 편",4,"명확히",5]},
-  {q:"본인의 신체 이미지에 만족?",c:"conf",o:["매우 불만",1,"불만",2,"보통",3,"만족",4,"매우 만족",5]}
+  {q:"관계 중에 통증을 느끼는 편인가요?",c:"stm",o:["항상 느껴요",1,"자주 느껴요",2,"가끔 느껴요",3,"거의 없어요",4,"전혀 없어요",5]},
+  {q:"충분히 준비된 상태에서 시작하나요?",c:"sens",o:["거의 아니에요",1,"가끔요",2,"보통이에요",3,"대체로 그래요",4,"항상 그래요",5]},
+  {q:"오르가슴을 느끼는 빈도는 어떤가요?",c:"sens",o:["전혀 없어요",1,"드물어요",2,"가끔이에요",3,"자주 느껴요",4,"거의 항상이에요",5]},
+  {q:"원치 않는 걸 거절할 수 있나요?",c:"conf",o:["전혀 못 해요",1,"어려워요",2,"보통이에요",3,"잘하는 편이에요",4,"분명하게 해요",5]},
+  {q:"내 몸에 대해 어떻게 느끼고 있나요?",c:"conf",o:["많이 불만이에요",1,"아쉬운 편이에요",2,"보통이에요",3,"만족해요",4,"아주 만족해요",5]}
 ];
 
 var SK=['stm','sens','comm','bond','conf','know'];
 var SN={stm:'체력',sens:'감각',comm:'소통',bond:'유대',conf:'멘탈',know:'지식'};
-var SC={stm:'var(--red)',sens:'var(--purple)',comm:'var(--blue)',bond:'var(--pink)',conf:'var(--amber)',know:'var(--green)'};
+var SC={stm:'var(--c1)',sens:'var(--c5)',comm:'var(--c3)',bond:'var(--c4)',conf:'var(--c6)',know:'var(--c2)'};
 var SM={stm:'🔥',sens:'✨',comm:'💬',bond:'💞',conf:'🧠',know:'📚'};
 var NM={
   SS:{n:'슈퍼 러버',t:'모든 능력치가 빛나는 완벽한 밤의 지배자',q:'"당신은 이미 전설입니다."'},
@@ -335,10 +319,8 @@ var ART=[
   {t:'첫 경험 전 알아야 할 모든 것',u:'https://tryme.im/251',img:'https://score.tryme.im/28.jpeg',tag:['know','sens'],tier:'low'}
 ];
 
-/* ======== STATE ======== */
 var GD='',AGE='',QS=[],ci=0,ANS={};
 
-/* ======== NAV ======== */
 function go(id){document.querySelectorAll('section').forEach(function(s){s.classList.remove('active');});document.getElementById(id).classList.add('active');}
 function pk(btn,g){GD=g;document.querySelectorAll('.g-btn').forEach(function(b){b.classList.remove('sel');});btn.classList.add('sel');}
 function startQuiz(){AGE=document.getElementById('ageSelect').value;if(!GD||!AGE){alert('성별과 연령대를 선택해주세요.');return;}QS=COMMON.concat(GD==='M'?M_BODY:F_BODY);ci=0;ANS={};go('quiz');stQ();}
@@ -366,10 +348,8 @@ function ans(btn,v){
 function goBack(){if(ci>0){ci--;stQ();}}
 function goNext(){if(ANS[ci]===undefined)return;if(ci<QS.length-1){ci++;stQ();}else{go('loading');runLoad();}}
 
-/* ======== LOADING ======== */
 function runLoad(){
-  var p=0;
-  var iv=setInterval(function(){
+  var p=0;var iv=setInterval(function(){
     p+=Math.random()*8+2;if(p>100)p=100;
     document.getElementById('ldBar').style.width=p+'%';
     document.getElementById('ldPct').textContent=Math.floor(p)+'%';
@@ -377,7 +357,6 @@ function runLoad(){
   },120);
 }
 
-/* ======== CALC ======== */
 function phi(z){var a1=0.254829592,a2=-0.284496736,a3=1.421413741,a4=-1.453152027,a5=1.061405429,p=0.3275911;var s=1;if(z<0)s=-1;z=Math.abs(z)/Math.sqrt(2);var t=1/(1+p*z);var y=1-((((a5*t+a4)*t+a3)*t+a2)*t+a1)*t*Math.exp(-z*z);return 0.5*(1+s*y);}
 function pctl(score){var mean=62,sd=14;return Math.round(phi((score-mean)/sd)*100);}
 
@@ -389,213 +368,127 @@ function calc(){
   var total=0;SK.forEach(function(k){total+=sc[k];});
   var avg=Math.round(total/6);
   var tier=avg>=92?'SS':avg>=80?'S':avg>=68?'A':avg>=52?'B':avg>=36?'C':'D';
-  var nm=NM[tier];
-  var pc=pctl(avg);
+  var nm=NM[tier];var pc=pctl(avg);
   var sorted=SK.slice().sort(function(a,b){return sc[b]-sc[a];});
   var strongest=sorted[0],weakest=sorted[sorted.length-1];
-
   incrementCounter();
-
   var h=buildResultHTML(sc,avg,tier,nm,pc,sorted,strongest,weakest,false);
   window._rName=nm.n;window._rTag=nm.t;window._rScore=avg;
   window._shareData={g:GD,s:sc,a:avg,t:tier};
-
   document.getElementById('resultInner').innerHTML=h;
-  go('result');
-  window.scrollTo(0,0);
+  go('result');window.scrollTo(0,0);
   setTimeout(function(){drawRing('ringCv',avg);},100);
   setTimeout(function(){drawH('hexCv',sc);},200);
 }
 
-/* ======== 결과 HTML 빌더 ======== */
 function buildResultHTML(sc,avg,tier,nm,pc,sorted,strongest,weakest,isShared){
   function pickArticle(tagKey,exclude){
     var best=null,bs=-1;
-    ART.forEach(function(a){if(exclude.indexOf(a)!==-1)return;var s=0;if(a.tag.indexOf(tagKey)!==-1)s+=10;if(a.tier==='low'||a.tier==='all')s+=3;if(s>bs){bs=s;best=a;}});
-    return best;
+    ART.forEach(function(a){if(exclude.indexOf(a)!==-1)return;var s=0;if(a.tag.indexOf(tagKey)!==-1)s+=10;if(a.tier==='low'||a.tier==='all')s+=3;if(s>bs){bs=s;best=a;}});return best;
   }
   function pickReco(exclude){
     var best=null,bs=-1;
-    ART.forEach(function(a){if(exclude.indexOf(a)!==-1)return;var s=0;a.tag.forEach(function(t){s+=sc[t]||0;});if(a.tier==='high')s+=5;if(a.tier==='mid')s+=2;if(s>bs){bs=s;best=a;}});
-    return best;
+    ART.forEach(function(a){if(exclude.indexOf(a)!==-1)return;var s=0;a.tag.forEach(function(t){s+=sc[t]||0;});if(a.tier==='high')s+=5;if(a.tier==='mid')s+=2;if(s>bs){bs=s;best=a;}});return best;
   }
   var used=[];
   var weakArt=pickArticle(weakest,used);if(weakArt)used.push(weakArt);
   var reco1=pickReco(used);if(reco1)used.push(reco1);
   var reco2=pickReco(used);
-
   var weakArtH='';
   if(weakArt){
-    weakArtH='<div class="ctx-article-wrap">'
-      +'<div class="ctx-article-label">📖 '+SN[weakest]+' 점수가 낮은 당신에게</div>'
-      +'<a class="ctx-article" href="'+weakArt.u+'" target="_blank">'
-      +'<div class="ca-img"><img src="'+weakArt.img+'" alt=""></div>'
-      +'<div class="ca-body"><div class="ca-reason">'+SN[weakest]+' 개선에 도움되는 글</div>'
-      +'<div class="ca-title">'+weakArt.t+'</div>'
-      +'<div class="ca-cta"><span>읽어보기 →</span></div></div></a></div>';
+    weakArtH='<div class="ctx-article-wrap"><div class="ctx-article-label">📖 '+SN[weakest]+' 점수가 낮은 당신에게</div><a class="ctx-article" href="'+weakArt.u+'" target="_blank"><div class="ca-img"><img src="'+weakArt.img+'" alt=""></div><div class="ca-body"><div class="ca-reason">'+SN[weakest]+' 개선에 도움되는 글</div><div class="ca-title">'+weakArt.t+'</div><div class="ca-cta"><span>읽어보기 →</span></div></div></a></div>';
   }
   var recoH='';
   if(reco1||reco2){
     recoH='<div class="reco-section"><div class="sec-tit">당신을 위한 추천</div><div class="sec-sub">결과를 바탕으로 선별된 아티클이에요</div>';
-    [reco1,reco2].forEach(function(a){
-      if(!a)return;
-      var reason=a.tag.map(function(t){return SN[t]||'';}).join(' · ')+' 관련';
-      recoH+='<a class="ctx-article-full" href="'+a.u+'" target="_blank">'
-        +'<div class="caf-img"><img src="'+a.img+'" alt=""></div>'
-        +'<div class="caf-body"><div class="caf-reason">'+reason+'</div>'
-        +'<div class="caf-title">'+a.t+'</div>'
-        +'<div class="caf-cta"><span>읽어보기 →</span></div></div></a>';
-    });
-    recoH+='</div>';
+    [reco1,reco2].forEach(function(a){if(!a)return;var reason=a.tag.map(function(t){return SN[t]||'';}).join(' · ')+' 관련';
+      recoH+='<a class="ctx-article-full" href="'+a.u+'" target="_blank"><div class="caf-img"><img src="'+a.img+'" alt=""></div><div class="caf-body"><div class="caf-reason">'+reason+'</div><div class="caf-title">'+a.t+'</div><div class="caf-cta"><span>읽어보기 →</span></div></div></a>';
+    });recoH+='</div>';
   }
-
-  var strDesc=SN[strongest]+' 능력치가 '+sc[strongest]+'점으로 가장 높습니다. 이 영역에서 당신은 이미 상위권이에요.';
-  var weakDesc=SN[weakest]+' 능력치가 '+sc[weakest]+'점으로 가장 낮습니다. 작은 노력으로 큰 변화를 만들 수 있는 영역이에요.';
+  var strDesc=SN[strongest]+' 능력치가 '+sc[strongest]+'점으로 가장 높아요. 이 영역에서 당신은 이미 상위권이에요.';
+  var weakDesc=SN[weakest]+' 능력치가 '+sc[weakest]+'점으로 가장 낮아요. 조금만 신경 쓰면 빠르게 올라갈 수 있는 영역이에요.';
   var advTxt=lowAct(weakest);
   var tips=[
-    {w:'이번 주',title:'5분 호흡 명상',body:'관계 전 5분간 깊은 호흡을 함께 해보세요. 긴장이 풀리고 감각이 예민해집니다.'},
-    {w:'이번 주',title:'감사 표현 3번',body:'파트너에게 하루 3번 고마움을 표현해보세요. 정서적 유대감이 깊어집니다.'},
+    {w:'이번 주',title:'5분 호흡 명상',body:'관계 전 5분간 깊은 호흡을 함께 해보세요. 긴장이 풀리고 감각이 예민해져요.'},
+    {w:'이번 주',title:'감사 표현 3번',body:'파트너에게 하루 3번 고마움을 표현해보세요. 정서적 유대감이 깊어져요.'},
     {w:'이번 주',title:'새로운 장소 시도',body:'거실, 욕실 등 평소와 다른 공간에서 스킨십을 시도해보세요.'},
     {w:'이번 주',title:'디지털 디톡스 데이트',body:'폰 없이 2시간, 서로에게만 집중하는 시간을 만들어보세요.'}
   ];
   var tip=tips[Math.floor(Math.random()*tips.length)];
-  var cvId=isShared?'ringCvS':'ringCv';
-  var hexId=isShared?'hexCvS':'hexCv';
-
+  var cvId=isShared?'ringCvS':'ringCv';var hexId=isShared?'hexCvS':'hexCv';
   var h='';
-  h+='<div class="r-hero">';
-  h+='<div class="r-tier">'+tier+' TIER</div>';
-  h+='<div class="r-name">'+nm.n+'</div>';
-  h+='<div class="r-tag">'+nm.t+'</div>';
+  h+='<div class="r-hero"><div class="r-tier">'+tier+' TIER</div><div class="r-name">'+nm.n+'</div><div class="r-tag">'+nm.t+'</div>';
   h+='<div class="r-score-ring"><canvas id="'+cvId+'" width="280" height="280"></canvas><div class="r-score-num"><strong>'+avg+'</strong><span>/ 100</span></div></div>';
-  h+='<div class="r-pctl">상위 <b>'+Math.max(1,100-pc)+'%</b></div>';
-  h+='<div class="r-quote">'+nm.q+'</div>';
-  h+='</div>';
-
+  h+='<div class="r-pctl">상위 <b>'+Math.max(1,100-pc)+'%</b></div><div class="r-quote">'+nm.q+'</div></div>';
   h+='<div class="r-stats"><div class="sec-tit">Ability Stats</div>';
   sorted.forEach(function(k){
     h+='<div class="stat-row"><div class="stat-icon">'+SM[k]+'</div><div class="stat-info"><div class="stat-hd"><span class="stat-name">'+SN[k]+'</span><span class="stat-val" style="color:'+SC[k]+'">'+sc[k]+'</span></div><div class="stat-bar-bg"><div class="stat-bar" style="width:'+sc[k]+'%;background:'+SC[k]+'"></div></div></div></div>';
   });
   h+='</div>';
-
   h+='<div class="r-hex"><div class="sec-tit">능력치 차트</div><canvas id="'+hexId+'" width="600" height="600"></canvas></div>';
-
   h+='<div class="r-sw"><div class="sec-tit">Strength & Weakness</div>';
   h+='<div class="sw-card"><div class="sw-label">💪 STRONGEST</div><div class="sw-name">'+SM[strongest]+' '+SN[strongest]+' '+sc[strongest]+'점</div><div class="sw-desc">'+strDesc+'</div></div>';
-  h+='<div class="sw-card"><div class="sw-label weak">📉 WEAKEST</div><div class="sw-name">'+SM[weakest]+' '+SN[weakest]+' '+sc[weakest]+'점</div><div class="sw-desc">'+weakDesc+'</div></div>';
-  h+='</div>';
-
+  h+='<div class="sw-card"><div class="sw-label weak">📉 WEAKEST</div><div class="sw-name">'+SM[weakest]+' '+SN[weakest]+' '+sc[weakest]+'점</div><div class="sw-desc">'+weakDesc+'</div></div></div>';
   h+=weakArtH;
-
   h+='<div class="r-advice"><div class="sec-tit">맞춤 조언</div><div class="adv-box"><p>'+advTxt+'</p></div></div>';
   h+=recoH;
-
   h+='<div class="r-tip"><div class="sec-tit">Weekly Tip</div><div class="tip-card"><div class="tip-week">'+tip.w+'</div><div class="tip-title">'+tip.title+'</div><div class="tip-body">'+tip.body+'</div></div></div>';
-
-  if(isShared){
-    h+='<div class="shared-cta"><button class="btn-try" onclick="location.href=location.origin+location.pathname">나도 테스트 해보기</button></div>';
-  }else{
-    h+='<div class="r-actions">';
-    h+='<button class="btn-share" onclick="shareResult()">결과 공유하기</button>';
-    h+='<button class="btn-retry" onclick="retry()">다시하기</button>';
-    h+='</div>';
-  }
+  if(isShared){h+='<div class="shared-cta"><button class="btn-try" onclick="location.href=location.origin+location.pathname">나도 테스트 해보기</button></div>';}
+  else{h+='<div class="r-actions"><button class="btn-share" onclick="shareResult()">결과 공유하기</button><button class="btn-retry" onclick="retry()">다시하기</button></div>';}
   return h;
 }
 
-/* ======== 차트 ======== */
 function drawRing(id,avg){
-  var cv=document.getElementById(id);if(!cv)return;
-  var ctx=cv.getContext('2d');
+  var cv=document.getElementById(id);if(!cv)return;var ctx=cv.getContext('2d');
   var cx=140,cy=140,r=120,lw=14;
   ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.strokeStyle='#E8E2D8';ctx.lineWidth=lw;ctx.stroke();
   var end=-Math.PI/2+(Math.PI*2*(avg/100));
-  ctx.beginPath();ctx.arc(cx,cy,r,-Math.PI/2,end);ctx.strokeStyle='#C8102E';ctx.lineWidth=lw;ctx.lineCap='round';ctx.stroke();
+  ctx.beginPath();ctx.arc(cx,cy,r,-Math.PI/2,end);ctx.strokeStyle='#1e5852';ctx.lineWidth=lw;ctx.lineCap='round';ctx.stroke();
 }
 function drawH(id,sc){
-  var cv=document.getElementById(id);if(!cv)return;
-  var ctx=cv.getContext('2d');
-  var cx=300,cy=300,R=200;
-  ctx.clearRect(0,0,600,600);
-  [1,.75,.5,.25].forEach(function(f){
-    ctx.beginPath();SK.forEach(function(k,i){var a=-Math.PI/2+(Math.PI*2/6)*i;var x=cx+R*f*Math.cos(a),y=cy+R*f*Math.sin(a);i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);});
-    ctx.closePath();ctx.strokeStyle='#E0DBD2';ctx.lineWidth=1;ctx.stroke();
-  });
-  SK.forEach(function(k,i){
-    var a=-Math.PI/2+(Math.PI*2/6)*i;
-    ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(cx+R*Math.cos(a),cy+R*Math.sin(a));ctx.strokeStyle='#E0DBD2';ctx.lineWidth=1;ctx.stroke();
-  });
-  ctx.beginPath();
-  SK.forEach(function(k,i){var a=-Math.PI/2+(Math.PI*2/6)*i;var v=sc[k]/100;var x=cx+R*v*Math.cos(a),y=cy+R*v*Math.sin(a);i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);});
-  ctx.closePath();ctx.fillStyle='rgba(200,16,46,0.13)';ctx.fill();ctx.strokeStyle='#C8102E';ctx.lineWidth=2.5;ctx.stroke();
-  SK.forEach(function(k,i){
-    var a=-Math.PI/2+(Math.PI*2/6)*i;var v=sc[k]/100;
-    var x=cx+R*v*Math.cos(a),y=cy+R*v*Math.sin(a);
-    ctx.beginPath();ctx.arc(x,y,5,0,Math.PI*2);ctx.fillStyle='#C8102E';ctx.fill();
-  });
-  SK.forEach(function(k,i){
-    var a=-Math.PI/2+(Math.PI*2/6)*i;
-    var lx=cx+(R+22)*Math.cos(a),ly=cy+(R+22)*Math.sin(a);
-    ctx.font='600 11px Pretendard';ctx.fillStyle='#8A847A';ctx.textAlign='center';ctx.textBaseline='middle';
-    ctx.fillText(SN[k],lx,ly);
-  });
+  var cv=document.getElementById(id);if(!cv)return;var ctx=cv.getContext('2d');
+  var cx=300,cy=300,R=200;ctx.clearRect(0,0,600,600);
+  [1,.75,.5,.25].forEach(function(f){ctx.beginPath();SK.forEach(function(k,i){var a=-Math.PI/2+(Math.PI*2/6)*i;var x=cx+R*f*Math.cos(a),y=cy+R*f*Math.sin(a);i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);});ctx.closePath();ctx.strokeStyle='#E0DBD2';ctx.lineWidth=1;ctx.stroke();});
+  SK.forEach(function(k,i){var a=-Math.PI/2+(Math.PI*2/6)*i;ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(cx+R*Math.cos(a),cy+R*Math.sin(a));ctx.strokeStyle='#E0DBD2';ctx.lineWidth=1;ctx.stroke();});
+  ctx.beginPath();SK.forEach(function(k,i){var a=-Math.PI/2+(Math.PI*2/6)*i;var v=sc[k]/100;var x=cx+R*v*Math.cos(a),y=cy+R*v*Math.sin(a);i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);});
+  ctx.closePath();ctx.fillStyle='rgba(30,88,82,0.12)';ctx.fill();ctx.strokeStyle='#1e5852';ctx.lineWidth=2.5;ctx.stroke();
+  SK.forEach(function(k,i){var a=-Math.PI/2+(Math.PI*2/6)*i;var v=sc[k]/100;var x=cx+R*v*Math.cos(a),y=cy+R*v*Math.sin(a);ctx.beginPath();ctx.arc(x,y,4,0,Math.PI*2);ctx.fillStyle='#1e5852';ctx.fill();});
+  SK.forEach(function(k,i){var a=-Math.PI/2+(Math.PI*2/6)*i;var lx=cx+(R+22)*Math.cos(a),ly=cy+(R+22)*Math.sin(a);ctx.font='600 11px Pretendard';ctx.fillStyle='#8A847A';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(SN[k],lx,ly);});
 }
 
-/* ======== 조언 ======== */
 function lowAct(key){
   var m={
-    stm:'체력은 성생활의 기반입니다. 주 3회 이상 유산소 운동과 코어 강화 운동을 추천합니다. 수면의 질도 함께 챙기세요. 체력이 올라가면 자신감과 지속력 모두 향상됩니다.',
-    sens:'감각을 깨우려면 서두르지 마세요. 전희 시간을 10분 이상으로 늘려보고, 새로운 감각(온도·질감·향)을 탐색해보세요. 마인드풀 터치를 연습하면 감각이 크게 예민해집니다.',
-    comm:'소통은 연습입니다. "나는 ~할 때 좋아"라는 I-message로 시작해보세요. 관계 중이 아닌 평소에 성적 선호를 대화하는 습관을 들이면, 침대 위 소통이 자연스러워집니다.',
-    bond:'유대감은 비성적 스킨십에서 시작됩니다. 하루 30초 포옹, 눈 맞춤, 필로우토크를 실천해보세요. 작은 루틴이 깊은 정서적 연결로 이어집니다.',
-    conf:'자신감은 경험과 자기 수용에서 옵니다. 부정적 셀프토크를 인지하고, 자신의 매력 포인트 3가지를 적어보세요. 필요하다면 전문 상담도 큰 도움이 됩니다.',
-    know:'지식은 가장 빠르게 올릴 수 있는 스탯입니다. 피임법, 성건강 검진 주기, 성반응 사이클을 학습해보세요. 정확한 지식이 불안을 줄이고 관계의 질을 높입니다.'
+    stm:'체력은 성생활의 기초예요. 주 3회 이상 유산소 운동과 코어 운동을 시작해보세요. 수면의 질도 함께 챙기면 자신감과 지속력 모두 올라가요.',
+    sens:'감각은 서두르지 않을 때 깨어나요. 전희 시간을 10분 이상으로 늘려보고, 새로운 감각(온도·질감·향)을 탐색해보세요. 마인드풀 터치를 연습하면 감각이 크게 달라져요.',
+    comm:'소통은 연습이에요. "나는 이럴 때 좋아"처럼 I-message로 시작해보세요. 평소에 성적 선호를 대화하는 습관을 들이면, 침대 위 소통이 자연스러워져요.',
+    bond:'유대감은 비성적 스킨십에서 시작돼요. 하루 30초 포옹, 눈 맞춤, 관계 후 대화를 실천해보세요. 작은 루틴이 깊은 정서적 연결로 이어져요.',
+    conf:'자신감은 경험과 자기 수용에서 와요. 부정적인 셀프토크를 알아차리고, 나의 매력 포인트 3가지를 적어보세요. 필요하다면 전문 상담도 큰 도움이 돼요.',
+    know:'지식은 가장 빠르게 올릴 수 있는 영역이에요. 피임법, 성건강 검진 주기, 성반응 사이클을 한번 찾아보세요. 정확한 지식이 불안을 줄이고 관계의 질을 높여줘요.'
   };
   return m[key]||'각 영역을 균형 있게 발전시켜 보세요.';
 }
 
-/* ======== 공유 ======== */
 function shareResult(){
-  var d=window._shareData;
-  var payload=JSON.stringify(d);
+  var d=window._shareData;var payload=JSON.stringify(d);
   var encoded=btoa(unescape(encodeURIComponent(payload)));
   var url=location.origin+location.pathname+'?r='+encodeURIComponent(encoded);
-
-  if(navigator.share){
-    navigator.share({title:'나의 성생활 능력치 결과',text:window._rName+' — '+window._rTag,url:url}).catch(function(){copyToClip(url);});
-  }else{
-    copyToClip(url);
-  }
+  if(navigator.share){navigator.share({title:'나의 성생활 능력치 결과',text:window._rName+' — '+window._rTag,url:url}).catch(function(){copyToClip(url);});}
+  else{copyToClip(url);}
 }
 function copyToClip(txt){
-  if(navigator.clipboard&&window.isSecureContext){
-    navigator.clipboard.writeText(txt).then(function(){alert('공유 링크가 복사되었어요!\n친구에게 보내보세요.');});
-  }else{
-    var ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);
-    alert('공유 링크가 복사되었어요!\n친구에게 보내보세요.');
-  }
+  if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(txt).then(function(){alert('공유 링크가 복사되었어요!\n친구에게 보내보세요.');});}
+  else{var ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);alert('공유 링크가 복사되었어요!\n친구에게 보내보세요.');}
 }
-
-/* ======== 다시하기 ======== */
 function retry(){
   GD='';AGE='';QS=[];ci=0;ANS={};
   document.querySelectorAll('.g-btn').forEach(function(b){b.classList.remove('sel');});
   document.getElementById('ageSelect').selectedIndex=0;
-  go('intro');
-  window.scrollTo(0,0);
-  loadCounter();
+  go('intro');window.scrollTo(0,0);loadCounter();
 }
-
-/* ======== 공유 링크 복원 ======== */
 function checkShared(){
-  var params=new URLSearchParams(location.search);
-  var r=params.get('r');
-  if(!r)return false;
-  try{
-    var json=decodeURIComponent(escape(atob(decodeURIComponent(r))));
-    var d=JSON.parse(json);
-    var sc=d.s;var avg=d.a;var tier=d.t;
-    var nm=NM[tier];var pc=pctl(avg);
+  var params=new URLSearchParams(location.search);var r=params.get('r');if(!r)return false;
+  try{var json=decodeURIComponent(escape(atob(decodeURIComponent(r))));var d=JSON.parse(json);
+    var sc=d.s;var avg=d.a;var tier=d.t;var nm=NM[tier];var pc=pctl(avg);
     var sorted=SK.slice().sort(function(a,b){return sc[b]-sc[a];});
     var strongest=sorted[0],weakest=sorted[sorted.length-1];
     var h=buildResultHTML(sc,avg,tier,nm,pc,sorted,strongest,weakest,true);
@@ -607,13 +500,7 @@ function checkShared(){
     return true;
   }catch(e){return false;}
 }
-
-/* ======== INIT ======== */
-(function(){
-  if(!checkShared()){
-    loadCounter();
-  }
-})();
+(function(){if(!checkShared()){loadCounter();}})();
 </script>
 </body>
 </html>
