@@ -227,20 +227,20 @@ section.active{display:flex;flex-direction:column}
 <section id="shared-result"><div id="sharedInner"></div></section>
 
 <script>
-// --- GA 추적용 헬퍼 함수 ---
+// --- GA 추적용 헬퍼 함수 추가 ---
 function trackStartTest() {
   if (typeof gtag !== 'undefined') {
-    gtag('event', 'click_start_test');
+    gtag('event', '성생활 점수_테스트 시작하기');
   }
 }
 function trackArticle(url) {
   if (typeof gtag !== 'undefined') {
-    gtag('event', 'click_article', {
+    gtag('event', '성생활 점수_아티클', {
       'article_url': url
     });
   }
 }
-// -----------------------
+// ---------------------------------
 
 // 손가락 두 개로 확대(Pinch to Zoom) 방지
 document.addEventListener('touchstart', function(event) {
@@ -427,7 +427,7 @@ function buildResultHTML(sc,avg,tier,nm,pc,sorted,strongest,weakest,isShared){
     [reco1,reco2].forEach(function(a){
       if(!a)return;
       var reason=a.tag.map(function(t){return SN[t]||'';}).join(' · ')+' 관련';
-      // 아티클 클릭 시 GA 이벤트 전송 (onclick 속성 추가)
+      // GA 이벤트 전송 (onclick) 추가
       recoH+='<a class="ctx-article-full" href="'+a.u+'" target="_blank" onclick="trackArticle(\''+a.u+'\')"><div class="caf-img"><img src="'+a.img+'" alt=""></div><div class="caf-body"><div class="caf-reason">'+reason+'</div><div class="caf-title">'+a.t+'</div><div class="caf-cta"><span>읽어보기 →</span></div></div></a>';
     });
     recoH+='</div>';
@@ -497,7 +497,7 @@ function lowAct(key){
 }
 
 function shareResult(){
-  if (typeof gtag !== 'undefined') gtag('event', 'click_share_result'); // GA 이벤트 추적 추가
+  if (typeof gtag !== 'undefined') gtag('event', '성생활 점수_결과 공유하기'); // GA 이벤트 추적 추가
   var d=window._shareData;var payload=JSON.stringify(d);
   var encoded=btoa(unescape(encodeURIComponent(payload)));
   var url=location.origin+location.pathname+'?r='+encodeURIComponent(encoded);
