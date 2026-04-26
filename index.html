@@ -46,8 +46,8 @@ section.active{display:flex;flex-direction:column}
 .profile-wrap{width:100%;max-width:360px}
 .profile-wrap h2{font-family:'Noto Serif KR',serif;font-weight:900;font-size:24px;text-align:center;margin-bottom:32px;letter-spacing:-.04em}
 .gender-row{display:flex;gap:12px;margin-bottom:24px}
-.g-btn{flex:1;padding:18px;border:2px solid var(--line);border-radius:0;background:var(--card);font-size:16px;font-weight:700;cursor:pointer;transition:border-color .2s,background .2s;text-align:center;color:#000} /* 명시적 검은색 추가 */
-.g-btn.sel{border-color:var(--accent);background:var(--accent-light);color:#000} /* 명시적 검은색 추가 */
+.g-btn{flex:1;padding:18px;border:2px solid var(--line);border-radius:0;background:var(--card);font-size:16px;font-weight:700;cursor:pointer;transition:border-color .2s,background .2s;text-align:center;color:#000}
+.g-btn.sel{border-color:var(--accent);background:var(--accent-light);color:#000}
 .age-group label{display:block;font-size:14px;font-weight:700;margin-bottom:8px}
 .age-group select{width:100%;padding:16px;border:2px solid var(--line);border-radius:0;background:var(--card);font-size:15px;font-family:inherit;appearance:none;-webkit-appearance:none;color:#000}
 .btn-next{width:100%;padding:18px;border:none;border-radius:0;background:var(--accent);color:#fff;font-size:17px;font-weight:800;margin-top:32px;cursor:pointer;letter-spacing:-.03em;transition:transform .15s}
@@ -62,8 +62,8 @@ section.active{display:flex;flex-direction:column}
 .q-body{flex:1;display:flex;justify-content:center;align-items:center;text-align:center;padding:20px 0}
 .q-body p{font-weight:800;font-size:26px;line-height:1.45;letter-spacing:-.04em}
 .opts{display:flex;flex-direction:column;gap:10px;margin-bottom:16px}
-.opt-btn{padding:16px;border:2px solid var(--line);border-radius:0;background:var(--card);font-size:15px;font-weight:600;cursor:pointer;text-align:center;transition:border-color .2s,background .2s, color .2s;color:#000} /* 브라우저 파란색 방지를 위한 명시적 검은색 추가 */
-.opt-btn.sel{border-color:var(--accent);background:var(--accent-light);color:#000} /* 선택 시에도 확실한 검은색 */
+.opt-btn{padding:16px;border:2px solid var(--line);border-radius:0;background:var(--card);font-size:15px;font-weight:600;cursor:pointer;text-align:center;transition:border-color .2s,background .2s, color .2s;color:#000}
+.opt-btn.sel{border-color:var(--accent);background:var(--accent-light);color:#000}
 .nav-row{display:flex;gap:10px;margin-top:auto;padding-bottom:12px}
 .nav-btn{flex:1;padding:14px;border:2px solid var(--line);border-radius:0;background:var(--card);font-size:15px;font-weight:700;cursor:pointer;text-align:center;transition:border-color .2s,background .2s,opacity .2s;color:#000}
 .nav-btn:disabled{opacity:.35;cursor:default}
@@ -405,22 +405,14 @@ function calc(){
 }
 
 function buildResultHTML(sc,avg,tier,nm,pc,sorted,strongest,weakest,isShared){
-  function pickArticle(tagKey,exclude){
-    var best=null,bs=-1;
-    ART.forEach(function(a){if(exclude.indexOf(a)!==-1)return;var s=0;if(a.tag.indexOf(tagKey)!==-1)s+=10;if(a.tier==='low'||a.tier==='all')s+=3;if(s>bs){bs=s;best=a;}});return best;
-  }
   function pickReco(exclude){
     var best=null,bs=-1;
     ART.forEach(function(a){if(exclude.indexOf(a)!==-1)return;var s=0;a.tag.forEach(function(t){s+=sc[t]||0;});if(a.tier==='high')s+=5;if(a.tier==='mid')s+=2;if(s>bs){bs=s;best=a;}});return best;
   }
+  
   var used=[];
-  var weakArt=pickArticle(weakest,used);if(weakArt)used.push(weakArt);
   var reco1=pickReco(used);if(reco1)used.push(reco1);
   var reco2=pickReco(used);
-  var weakArtH='';
-  if(weakArt){
-    weakArtH='<div class="ctx-article-wrap"><div class="ctx-article-label">📖 '+SN[weakest]+' 점수가 낮은 당신에게</div><a class="ctx-article" href="'+weakArt.u+'" target="_blank"><div class="ca-img"><img src="'+weakArt.img+'" alt=""></div><div class="ca-body"><div class="ca-reason">'+SN[weakest]+' 개선에 도움되는 글</div><div class="ca-title">'+weakArt.t+'</div><div class="ca-cta"><span>읽어보기 →</span></div></div></a></div>';
-  }
   var recoH='';
   if(reco1||reco2){
     recoH='<div class="reco-section"><div class="sec-tit">당신을 위한 추천</div><div class="sec-sub">결과를 바탕으로 선별된 아티클이에요</div>';
@@ -428,6 +420,7 @@ function buildResultHTML(sc,avg,tier,nm,pc,sorted,strongest,weakest,isShared){
       recoH+='<a class="ctx-article-full" href="'+a.u+'" target="_blank"><div class="caf-img"><img src="'+a.img+'" alt=""></div><div class="caf-body"><div class="caf-reason">'+reason+'</div><div class="caf-title">'+a.t+'</div><div class="caf-cta"><span>읽어보기 →</span></div></div></a>';
     });recoH+='</div>';
   }
+  
   var strDesc=SN[strongest]+' 능력치가 '+sc[strongest]+'점으로 가장 높아요. 이 영역에서 당신은 이미 상위권이에요.';
   var weakDesc=SN[weakest]+' 능력치가 '+sc[weakest]+'점으로 가장 낮아요. 조금만 신경 쓰면 빠르게 올라갈 수 있는 영역이에요.';
   var advTxt=lowAct(weakest);
@@ -440,6 +433,7 @@ function buildResultHTML(sc,avg,tier,nm,pc,sorted,strongest,weakest,isShared){
   var tip=tips[Math.floor(Math.random()*tips.length)];
   var cvId=isShared?'ringCvS':'ringCv';var hexId=isShared?'hexCvS':'hexCv';
   var h='';
+  
   h+='<div class="r-hero"><div class="r-tier">'+tier+' TIER</div><div class="r-name">'+nm.n+'</div><div class="r-tag">'+nm.t+'</div>';
   h+='<div class="r-score-ring"><canvas id="'+cvId+'" width="280" height="280"></canvas><div class="r-score-num"><strong>'+avg+'</strong><span>/ 100</span></div></div>';
   h+='<div class="r-pctl">상위 <b>'+Math.max(1,100-pc)+'%</b></div><div class="r-quote">'+nm.q+'</div></div>';
@@ -452,7 +446,6 @@ function buildResultHTML(sc,avg,tier,nm,pc,sorted,strongest,weakest,isShared){
   h+='<div class="r-sw"><div class="sec-tit">Strength & Weakness</div>';
   h+='<div class="sw-card"><div class="sw-label">💪 STRONGEST</div><div class="sw-name">'+SM[strongest]+' '+SN[strongest]+' '+sc[strongest]+'점</div><div class="sw-desc">'+strDesc+'</div></div>';
   h+='<div class="sw-card"><div class="sw-label weak">📉 WEAKEST</div><div class="sw-name">'+SM[weakest]+' '+SN[weakest]+' '+sc[weakest]+'점</div><div class="sw-desc">'+weakDesc+'</div></div></div>';
-  h+=weakArtH;
   h+='<div class="r-advice"><div class="sec-tit">맞춤 조언</div><div class="adv-box"><p>'+advTxt+'</p></div></div>';
   h+=recoH;
   h+='<div class="r-tip"><div class="sec-tit">Weekly Tip</div><div class="tip-card"><div class="tip-week">'+tip.w+'</div><div class="tip-title">'+tip.title+'</div><div class="tip-body">'+tip.body+'</div></div></div>';
