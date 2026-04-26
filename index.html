@@ -46,10 +46,10 @@ section.active{display:flex;flex-direction:column}
 .profile-wrap{width:100%;max-width:360px}
 .profile-wrap h2{font-family:'Noto Serif KR',serif;font-weight:900;font-size:24px;text-align:center;margin-bottom:32px;letter-spacing:-.04em}
 .gender-row{display:flex;gap:12px;margin-bottom:24px}
-.g-btn{flex:1;padding:18px;border:2px solid var(--line);border-radius:0;background:var(--card);font-size:16px;font-weight:700;cursor:pointer;transition:border-color .2s,background .2s;text-align:center}
-.g-btn.sel{border-color:var(--accent);background:var(--accent-light)}
+.g-btn{flex:1;padding:18px;border:2px solid var(--line);border-radius:0;background:var(--card);font-size:16px;font-weight:700;cursor:pointer;transition:border-color .2s,background .2s;text-align:center;color:#000} /* 명시적 검은색 추가 */
+.g-btn.sel{border-color:var(--accent);background:var(--accent-light);color:#000} /* 명시적 검은색 추가 */
 .age-group label{display:block;font-size:14px;font-weight:700;margin-bottom:8px}
-.age-group select{width:100%;padding:16px;border:2px solid var(--line);border-radius:0;background:var(--card);font-size:15px;font-family:inherit;appearance:none;-webkit-appearance:none}
+.age-group select{width:100%;padding:16px;border:2px solid var(--line);border-radius:0;background:var(--card);font-size:15px;font-family:inherit;appearance:none;-webkit-appearance:none;color:#000}
 .btn-next{width:100%;padding:18px;border:none;border-radius:0;background:var(--accent);color:#fff;font-size:17px;font-weight:800;margin-top:32px;cursor:pointer;letter-spacing:-.03em;transition:transform .15s}
 .btn-next:active{transform:scale(.97)}
 
@@ -62,10 +62,10 @@ section.active{display:flex;flex-direction:column}
 .q-body{flex:1;display:flex;justify-content:center;align-items:center;text-align:center;padding:20px 0}
 .q-body p{font-weight:800;font-size:26px;line-height:1.45;letter-spacing:-.04em}
 .opts{display:flex;flex-direction:column;gap:10px;margin-bottom:16px}
-.opt-btn{padding:16px;border:2px solid var(--line);border-radius:0;background:var(--card);font-size:15px;font-weight:600;cursor:pointer;text-align:center;transition:border-color .2s,background .2s, color .2s}
-.opt-btn.sel{border-color:var(--accent);background:var(--accent-light);color:var(--tx);}
+.opt-btn{padding:16px;border:2px solid var(--line);border-radius:0;background:var(--card);font-size:15px;font-weight:600;cursor:pointer;text-align:center;transition:border-color .2s,background .2s, color .2s;color:#000} /* 브라우저 파란색 방지를 위한 명시적 검은색 추가 */
+.opt-btn.sel{border-color:var(--accent);background:var(--accent-light);color:#000} /* 선택 시에도 확실한 검은색 */
 .nav-row{display:flex;gap:10px;margin-top:auto;padding-bottom:12px}
-.nav-btn{flex:1;padding:14px;border:2px solid var(--line);border-radius:0;background:var(--card);font-size:15px;font-weight:700;cursor:pointer;text-align:center;transition:border-color .2s,background .2s,opacity .2s}
+.nav-btn{flex:1;padding:14px;border:2px solid var(--line);border-radius:0;background:var(--card);font-size:15px;font-weight:700;cursor:pointer;text-align:center;transition:border-color .2s,background .2s,opacity .2s;color:#000}
 .nav-btn:disabled{opacity:.35;cursor:default}
 .nav-btn.primary{border-color:var(--accent);background:var(--accent);color:#fff}
 
@@ -149,7 +149,7 @@ section.active{display:flex;flex-direction:column}
 .r-actions{padding:20px 24px 0;display:flex;gap:10px}
 .btn-share{flex:1;padding:16px;border:none;border-radius:0;background:var(--accent);color:#fff;font-size:15px;font-weight:700;cursor:pointer;transition:transform .15s}
 .btn-share:active{transform:scale(.97)}
-.btn-retry{flex:1;padding:16px;border:2px solid var(--line);border-radius:0;background:var(--card);font-size:15px;font-weight:700;cursor:pointer;transition:border-color .2s}
+.btn-retry{flex:1;padding:16px;border:2px solid var(--line);border-radius:0;background:var(--card);font-size:15px;font-weight:700;cursor:pointer;transition:border-color .2s;color:#000}
 .btn-retry:active{border-color:var(--accent)}
 
 #shared-result{display:none;min-height:100dvh;flex-direction:column}
@@ -481,7 +481,7 @@ function drawH(id,sc){
 
 function lowAct(key){
   var m={
-    stm:'체력은 성생활의 기초예요. 주 3회 이상 유산소 운동과 코어 운동을 시작해보세요. 수면의 질도 함께 챙기면 자신감과 지속력 모두 올라가요.',
+    stm:'체력은 성생활의 기초예요. 주 3회 이상 유산소 운동과 코어 운동을 시작해보세요. 수면의 질도 함께 일챙기면 자신감과 지속력 모두 올라가요.',
     sens:'감각은 서두르지 않을 때 깨어나요. 전희 시간을 10분 이상으로 늘려보고, 새로운 감각(온도·질감·향)을 탐색해보세요. 마인드풀 터치를 연습하면 감각이 크게 달라져요.',
     comm:'소통은 연습이에요. "나는 이럴 때 좋아"처럼 I-message로 시작해보세요. 평소에 성적 선호를 대화하는 습관을 들이면, 침대 위 소통이 자연스러워져요.',
     bond:'유대감은 비성적 스킨십에서 시작돼요. 하루 30초 포옹, 눈 맞춤, 관계 후 대화를 실천해보세요. 작은 루틴이 깊은 정서적 연결로 이어져요.',
